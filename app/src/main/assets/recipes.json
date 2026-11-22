@@ -1025,5 +1025,125 @@
     ],
     "source": "",
     "image": ""
+  },
+  {
+    "id": "pantry-cut-0",
+    "title": "Frango em pedaços no tacho com batata",
+    "type": "carne",
+    "technique": "Tacho",
+    "minutes": 45,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "frango em pedaços",
+        "qty": 800,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "batata",
+        "qty": 800,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e separa os utensílios de carne crua dos alimentos prontos a servir.",
+      "Doura os pedaços de frango no azeite, junta alho, batata em cubos e 300 ml de água. Tapa e cozinha em lume brando 30–35 min. Confirma 74 °C na parte mais espessa, sem encostar o termómetro ao osso."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "pantry-cut-1",
+    "title": "Costeletas de porco com arroz de alho",
+    "type": "carne",
+    "technique": "Frigideira",
+    "minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "costeletas de porco",
+        "qty": 700,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "arroz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e separa os utensílios de carne crua dos alimentos prontos a servir.",
+      "Coze o arroz conforme a embalagem. Seca e tempera as costeletas. Cozinha numa frigideira com azeite, em lume médio, cerca de 5–7 min de cada lado conforme a espessura. Confirma 63 °C no centro sem tocar no osso e deixa repousar 3 min."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "pantry-cut-2",
+    "title": "Cachaço de porco salteado com arroz",
+    "type": "carne",
+    "technique": "Frigideira",
+    "minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "cachaço de porco",
+        "qty": 650,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "arroz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e separa os utensílios de carne crua dos alimentos prontos a servir.",
+      "Corta o cachaço em tiras finas, retirando cartilagens. Salteia com azeite e alho em lume médio-alto, sem encher a frigideira. Cozinha até atingir 63 °C no centro e deixa repousar 3 min. Coze o arroz segundo a embalagem."
+    ],
+    "source": "",
+    "image": ""
   }
 ]

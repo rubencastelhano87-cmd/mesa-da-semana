@@ -112,10 +112,20 @@ public class MainActivity extends Activity {
    }catch(Exception e){toast("Usa um nome, quantidade positiva e unidade g, ml ou un.");}
   }).setNegativeButton("Cancelar",null).setNeutralButton(index<0?"":"Eliminar",(d,w)->{if(index>=0){arr("pantry").remove(index);save();show();}}).show();
  }
- String key(JSONObject x){return x.optString("name").trim().toLowerCase(new Locale("pt","PT"))+"|"+x.optString("unit");}
+ String canonical(String value){
+  String n=java.text.Normalizer.normalize(value.toLowerCase(new Locale("pt","PT")),java.text.Normalizer.Form.NFD).replaceAll("\\p{M}","").replaceAll("[^a-z0-9 ]"," ").replaceAll(" +"," ").trim();
+  if(n.equals("bifes de frango")||n.equals("bife de frango")||n.equals("peito de frango")||n.equals("peitos de frango"))return "peito de frango";
+  if(n.equals("frango partido")||n.equals("frango partigo")||n.equals("frango em pedacos"))return "frango em pedacos";
+  if(n.equals("costeletas do cachaco")||n.equals("costeletas de cachaco")||n.equals("costeletas de porco"))return "costeletas de porco";
+  if(n.equals("lombo cachaco sem osso")||n.equals("cachaco sem osso")||n.equals("cachaco de porco"))return "cachaco de porco";
+  if(n.equals("grao de bico cozido")||n.equals("grao cozido"))return "grao cozido";
+  return n;
+ }
+ String key(JSONObject x){return canonical(x.optString("name"))+"|"+x.optString("unit");}
  double available(JSONObject x){double q=0;for(int i=0;i<arr("pantry").length();i++){JSONObject p=arr("pantry").optJSONObject(i);if(key(p).equals(key(x)))q+=p.optDouble("qty");}return q;}
+ double mainCoverage(JSONObject r){JSONObject x=r.optJSONArray("ingredients").optJSONObject(0);return Math.min(1,available(x)/amount(r,x));}
  double amount(JSONObject r,JSONObject x){return x.optDouble("qty")*prefs().optInt("people")/r.optDouble("servings",4);}
- double score(JSONObject r){double score=Math.random()*2;JSONArray ingredients=r.optJSONArray("ingredients");for(int i=0;i<ingredients.length();i++){JSONObject x=ingredients.optJSONObject(i);score+=Math.min(1,available(x)/amount(r,x))*3;}return score;}
+ double score(JSONObject r){double coverage=mainCoverage(r);double score=(coverage>=0.999?10000:coverage>0?1000:0)+coverage*100;JSONArray ingredients=r.optJSONArray("ingredients");for(int i=1;i<ingredients.length();i++){JSONObject x=ingredients.optJSONObject(i);score+=Math.min(1,available(x)/amount(r,x));}return score+Math.random()*0.01;}
  JSONObject choose(String type,Set<String> used){
   JSONObject best=null;double value=-1;
   JSONArray all=new JSONArray();for(int i=0;i<catalogue.length();i++)all.put(catalogue.optJSONObject(i));for(int i=0;i<arr("favorites").length();i++)all.put(arr("favorites").optJSONObject(i));
@@ -125,19 +135,24 @@ public class MainActivity extends Activity {
  void generate(){
   JSONArray next=new JSONArray();Set<String> used=new HashSet<>();List<String> types=new ArrayList<>();
   for(int i=0;i<7;i++)types.add(i<prefs().optInt("fish")?"peixe":i<prefs().optInt("fish")+prefs().optInt("meat")?"carne":"vegetariana");
-  Collections.shuffle(types);
-  for(String type:types){JSONObject r=choose(type,used);if(r==null){toast("Faltam receitas distintas de "+type+" dentro do tempo escolhido. A ementa anterior foi mantida.");return;}used.add(r.optString("id"));try{next.put(new JSONObject(r.toString()));}catch(Exception ignored){}}
+  Collections.shuffle(types);JSONArray actual=arr("pantry");
+  try{
+   put(state,"pantry",new JSONArray(actual.toString()));
+   for(String type:types){JSONObject r=choose(type,used);if(r==null){toast("Faltam receitas distintas de "+type+" dentro do tempo escolhido. A ementa anterior foi mantida.");return;}put(r,"mainFromPantry",mainCoverage(r)>=0.999);used.add(r.optString("id"));next.put(r);consume(r);}
+  }catch(Exception e){toast("Não foi possível gerar a ementa. Dados preservados.");return;}
+  finally{put(state,"pantry",actual);}
   put(state,"plan",next);save();show();
  }
  void plan(){
   label(prefs().optInt("people")+" pessoas · até "+prefs().optInt("minutes")+" min · "+prefs().optInt("fish")+" peixe / "+prefs().optInt("meat")+" carne / "+(7-prefs().optInt("fish")-prefs().optInt("meat"))+" vegetariana",14);
+  label("A despensa tem prioridade. A distribuição de peixe/carne continua a ser respeitada: os pratos sem principal suficiente ficam assinalados para compras.",14);
   button("Gerar sete jantares",()->{if(arr("plan").length()==0)generate();else new AlertDialog.Builder(this).setMessage("Substituir a ementa em curso?").setPositiveButton("Gerar",(d,w)->generate()).setNegativeButton("Cancelar",null).show();});
   button("Aprender a cozinhar peixe",()->fish());
   String[] days={"Segunda","Terça","Quarta","Quinta","Sexta","Sábado","Domingo"};
   for(int i=0;i<arr("plan").length();i++){final int n=i;JSONObject r=arr("plan").optJSONObject(i);card(r,days[i]+(r.optBoolean("cooked")?" · Preparada":""),()->recipe(r,n));}
   if(arr("plan").length()==0)label("Começa pela despensa e gera a tua primeira semana.",17);
  }
- void card(JSONObject r,String eyebrow,Runnable click){LinearLayout b=box();String image=r.optString("image");if(image.startsWith("https://")){ImageView photo=new ImageView(this);photo.setScaleType(ImageView.ScaleType.CENTER_CROP);photo.setContentDescription(r.optString("title"));b.addView(photo,new LinearLayout.LayoutParams(-1,180));network.execute(()->{try{byte[] bytes=fetch(image,5000000);android.graphics.Bitmap bitmap=BitmapFactory.decodeByteArray(bytes,0,bytes.length);runOnUiThread(()->{if(!isDestroyed()&&bitmap!=null)photo.setImageBitmap(bitmap);});}catch(Exception ignored){}});}b.addView(text(eyebrow+" · "+r.optInt("minutes")+" min",13));b.addView(text(r.optString("title"),21));b.addView(text(r.optString("technique","Receita importada")+"  ↗",14));b.setOnClickListener(v->click.run());}
+ void card(JSONObject r,String eyebrow,Runnable click){LinearLayout b=box();String image=r.optString("image");if(image.startsWith("https://")){ImageView photo=new ImageView(this);photo.setScaleType(ImageView.ScaleType.CENTER_CROP);photo.setContentDescription(r.optString("title"));b.addView(photo,new LinearLayout.LayoutParams(-1,180));network.execute(()->{try{byte[] bytes=fetch(image,5000000);android.graphics.Bitmap bitmap=BitmapFactory.decodeByteArray(bytes,0,bytes.length);runOnUiThread(()->{if(!isDestroyed()&&bitmap!=null)photo.setImageBitmap(bitmap);});}catch(Exception ignored){}});}b.addView(text(eyebrow+" · "+r.optInt("minutes")+" min",13));b.addView(text(r.optString("title"),21));b.addView(text(r.optString("technique","Receita importada")+" · "+(r.optBoolean("mainFromPantry")?"Principal da despensa":"Principal exige compras"),14));b.setOnClickListener(v->click.run());}
  String number(double n){return String.format(new Locale("pt","PT"),"%.1f",n).replace(",0","");}
  void recipe(JSONObject r,int day){
   LinearLayout f=form();TextView details=text("",16);StringBuilder s=new StringBuilder();
