@@ -34,6 +34,7 @@ jobs:
           KEYSTORE: ${{ secrets.MESA_KEYSTORE_BASE64 }}
           MESA_STORE_PASSWORD: ${{ secrets.MESA_STORE_PASSWORD }}
           MESA_KEY_PASSWORD: ${{ secrets.MESA_KEY_PASSWORD }}
+          RECOVERY_KEY: ${{ secrets.MESA_RECOVERY_PRIVATE_KEY }}
         run: |
           if test -n "$KEYSTORE"; then
             printf '%s' "$KEYSTORE" | base64 --decode > "$MESA_KEYSTORE"
@@ -49,6 +50,9 @@ jobs:
           chmod 600 "$MESA_KEYSTORE"
       - name: Compilar e verificar assinatura
         run: |
+          curl --fail --location --globoff 'https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/Manrope%5Bwght%5D.ttf' -o app/src/main/assets/manrope.ttf
+          curl --fail --location 'https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt' -o app/src/main/assets/Manrope-OFL.txt
+          curl --fail --location 'https://images.unsplash.com/photo-1547592180-85f173990554?w=1000&q=85&fit=crop' -o app/src/main/assets/hero.jpg
           sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
           python3 scripts/validate.py
           gradle --no-daemon lintRelease assembleRelease assembleDebugAndroidTest
@@ -75,10 +79,11 @@ jobs:
         env:
           REPO: ${{ github.repository }}
         run: |
-          TAG="v0.1.0-${{ github.run_number }}"
+          TAG="v0.2.0-${{ github.run_number }}"
           gh release create "$TAG" dist/mesa-da-semana.apk dist/SHA256SUMS.txt dist/mesa-release.sealed.json --title "Mesa da Semana $TAG" --notes 'Vers�o inicial: APK assinado e testes automatizados Android. Descoberta autom�tica e acabamento fotogr�fico ainda em desenvolvimento.'
           URL="https://github.com/$REPO/releases/download/$TAG/mesa-da-semana.apk"
-          curl --fail --location --retry 3 "$URL" --output "$RUNNER_TEMP/download.apk"
+          gh release download "$TAG" --pattern mesa-da-semana.apk --dir "$RUNNER_TEMP" --clobber
+          cp "$RUNNER_TEMP/mesa-da-semana.apk" "$RUNNER_TEMP/download.apk"
           cmp dist/mesa-da-semana.apk "$RUNNER_TEMP/download.apk"
           python3 -m pip install 'qrcode[pil]==8.2'
           python3 scripts/qr.py "$URL" dist/mesa-da-semana-qr.png

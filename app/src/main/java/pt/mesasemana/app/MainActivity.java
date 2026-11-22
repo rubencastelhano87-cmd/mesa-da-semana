@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
  JSONObject state;
  JSONArray catalogue;
  LinearLayout content;
- int page=1;
+ int page=0;
  final int GREEN=Color.rgb(18,61,50), CREAM=Color.rgb(248,243,231);
  final ExecutorService network=Executors.newFixedThreadPool(2);
  final String[] tabs={"Despensa","Ementa","Trends","Compras","Guardadas"};
@@ -66,26 +66,40 @@ public class MainActivity extends Activity {
    for(int j=0;j<items.length();j++){JSONObject x=items.getJSONObject(j);x.getString("name");x.getString("category");if(x.getDouble("qty")<=0||!Arrays.asList("g","ml","un").contains(x.getString("unit")))throw new Exception("Quantidade inválida");}
   }
  }
- TextView text(String s,int size){TextView t=new TextView(this);t.setText(s);t.setTextSize(size);t.setTextColor(GREEN);t.setPadding(8,8,8,8);return t;}
- void label(String s,int size){content.addView(text(s,size));}
- void button(String s,Runnable action){Button b=new Button(this);b.setText(s);b.setTextColor(GREEN);b.setAllCaps(false);content.addView(b);b.setOnClickListener(v->action.run());}
+ int dp(float value){return Math.round(value*getResources().getDisplayMetrics().density);}
+ Typeface face(){try{return Typeface.createFromAsset(getAssets(),"manrope.ttf");}catch(Exception e){return Typeface.create("sans-serif",Typeface.NORMAL);}}
+ GradientDrawable shape(int color,int radius){GradientDrawable b=new GradientDrawable();b.setColor(color);b.setCornerRadius(dp(radius));return b;}
+ TextView text(String s,int size){TextView t=new TextView(this);t.setText(s);t.setTextSize(size);t.setTypeface(face());t.setTextColor(GREEN);t.setPadding(0,dp(6),0,dp(6));t.setLineSpacing(dp(3),1);return t;}
+ void label(String s,int size){TextView t=text(s,size);if(size>=20)t.setTypeface(face(),Typeface.BOLD);content.addView(t);}
+ void button(String s,Runnable action){Button b=new Button(this);b.setText(s);b.setTypeface(face(),Typeface.BOLD);b.setTextSize(15);b.setTextColor(Color.WHITE);b.setAllCaps(false);b.setBackground(shape(GREEN,18));b.setMinHeight(dp(54));b.setPadding(dp(14),dp(12),dp(14),dp(12));LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,dp(10),0,dp(10));content.addView(b,lp);b.setOnClickListener(v->action.run());}
  void toast(String s){Toast.makeText(this,s,Toast.LENGTH_LONG).show();}
- LinearLayout box(){LinearLayout b=new LinearLayout(this);b.setOrientation(LinearLayout.VERTICAL);b.setPadding(18,14,18,14);GradientDrawable bg=new GradientDrawable();bg.setColor(Color.WHITE);bg.setCornerRadius(28);b.setBackground(bg);LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,8,0,12);content.addView(b,lp);return b;}
+ LinearLayout box(){LinearLayout b=new LinearLayout(this);b.setOrientation(LinearLayout.VERTICAL);b.setPadding(dp(18),dp(16),dp(18),dp(16));GradientDrawable bg=shape(Color.WHITE,22);bg.setStroke(dp(1),Color.rgb(220,225,215));b.setBackground(bg);LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,dp(8),0,dp(12));content.addView(b,lp);return b;}
+ void hero(){
+  android.widget.FrameLayout hero=new android.widget.FrameLayout(this);hero.setBackgroundColor(GREEN);content.addView(hero,new LinearLayout.LayoutParams(-1,dp(280)));
+  ImageView photo=new ImageView(this);photo.setScaleType(ImageView.ScaleType.CENTER_CROP);photo.setContentDescription("Inspiração gastronómica");hero.addView(photo,new android.widget.FrameLayout.LayoutParams(-1,-1));
+  try{photo.setImageDrawable(android.graphics.drawable.Drawable.createFromStream(getAssets().open("hero.jpg"),null));}catch(Exception ignored){}
+  View shade=new View(this);GradientDrawable gradient=new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT,new int[]{0xf011382d,0xbb11382d,0x3311382d});shade.setBackground(gradient);hero.addView(shade,new android.widget.FrameLayout.LayoutParams(-1,-1));
+  LinearLayout copy=new LinearLayout(this);copy.setOrientation(LinearLayout.VERTICAL);copy.setPadding(dp(22),dp(22),dp(22),dp(20));hero.addView(copy,new android.widget.FrameLayout.LayoutParams(-1,-1));
+  TextView name=text("✳   MESA DA SEMANA",12);name.setTextColor(0xffe3e7b5);name.setTypeface(face(),Typeface.BOLD);copy.addView(name);
+  TextView title=text("O que há para\njantar?",37);title.setTypeface(Typeface.create("serif",Typeface.NORMAL));title.setTextColor(Color.WHITE);copy.addView(title);
+  TextView subtitle=text("A tua cozinha, novas ideias todos os dias. Planeia jantares e aproveita os ingredientes.",15);subtitle.setTextColor(0xfff3f1e6);copy.addView(subtitle);
+ }
+ void dashboard(){LinearLayout row=new LinearLayout(this);int done=0;for(int i=0;i<arr("plan").length();i++)if(arr("plan").optJSONObject(i).optBoolean("cooked"))done++;String[] numbers={""+arr("pantry").length(),done+" / 7",""+arr("favorites").length()};String[] captions={"Ingredientes\nem casa","Jantares\nfeitos","Receitas\nguardadas"};for(int i=0;i<3;i++){LinearLayout stat=new LinearLayout(this);stat.setOrientation(LinearLayout.VERTICAL);stat.setPadding(dp(12),dp(10),dp(8),dp(10));stat.setBackground(shape(i==0?GREEN:Color.WHITE,18));TextView n=text(numbers[i],25),caption=text(captions[i],11);n.setTypeface(face(),Typeface.BOLD);if(i==0){n.setTextColor(0xffe6edcd);caption.setTextColor(0xffe6edcd);}stat.addView(n);stat.addView(caption);LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(0,-1,1);lp.setMargins(dp(3),dp(16),dp(3),dp(16));row.addView(stat,lp);}content.addView(row);}
  void show(){
-  LinearLayout root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);root.setBackgroundColor(CREAM);root.setPadding(12,16,12,12);root.setOnApplyWindowInsetsListener((v,insets)->{v.setPadding(12,insets.getSystemWindowInsetTop()+16,12,insets.getSystemWindowInsetBottom()+12);return insets;});
-  TextView brand=text("MESA DA SEMANA  ◷",22);brand.setTypeface(null,Typeface.BOLD);root.addView(brand);
-  TextView settings=text("A tua família, à mesa.                         ⚙",14);root.addView(settings);settings.setOnClickListener(v->settings());
-  ScrollView scroll=new ScrollView(this);content=new LinearLayout(this);content.setOrientation(LinearLayout.VERTICAL);scroll.addView(content);root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
-  LinearLayout nav=new LinearLayout(this);
-  for(int i=0;i<5;i++){final int index=i;TextView t=text(tabs[i],11);t.setGravity(Gravity.CENTER);t.setMinHeight(56);t.setTypeface(null,i==page?Typeface.BOLD:Typeface.NORMAL);nav.addView(t,new LinearLayout.LayoutParams(0,-2,1));t.setOnClickListener(v->{page=index;show();});}
+  getWindow().setStatusBarColor(GREEN);getWindow().setNavigationBarColor(CREAM);
+  LinearLayout root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);root.setBackgroundColor(CREAM);root.setOnApplyWindowInsetsListener((v,insets)->{v.setPadding(0,insets.getSystemWindowInsetTop(),0,insets.getSystemWindowInsetBottom());return insets;});
+  ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);content=new LinearLayout(this);content.setOrientation(LinearLayout.VERTICAL);content.setPadding(dp(16),0,dp(16),dp(24));scroll.addView(content);root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
+  hero();dashboard();
+  LinearLayout heading=new LinearLayout(this);TextView title=text(tabs[page],27);title.setTypeface(face(),Typeface.BOLD);heading.addView(title,new LinearLayout.LayoutParams(0,-2,1));TextView settings=text("⚙",25);settings.setContentDescription("Preferências e cópia de segurança");settings.setPadding(dp(16),dp(6),dp(16),dp(6));settings.setOnClickListener(v->settings());heading.addView(settings);content.addView(heading);
+  LinearLayout nav=new LinearLayout(this);nav.setBackgroundColor(Color.WHITE);nav.setPadding(dp(6),dp(8),dp(6),dp(8));String[] icons={"▤","▦","✧","☑","♧"};
+  for(int i=0;i<5;i++){final int index=i;LinearLayout item=new LinearLayout(this);item.setOrientation(LinearLayout.VERTICAL);item.setGravity(Gravity.CENTER);item.setMinimumHeight(dp(66));if(i==page)item.setBackground(shape(0xffe7efcf,16));TextView icon=text(icons[i],24),caption=text(tabs[i],11);icon.setGravity(Gravity.CENTER);caption.setGravity(Gravity.CENTER);caption.setTypeface(face(),i==page?Typeface.BOLD:Typeface.NORMAL);item.addView(icon);item.addView(caption);nav.addView(item,new LinearLayout.LayoutParams(0,-2,1));item.setOnClickListener(v->{page=index;show();});}
   root.addView(nav);setContentView(root);
-  label(tabs[page],30);
   if(page==0)pantry();if(page==1)plan();if(page==2)trends();if(page==3)shopping();if(page==4)favorites();
  }
- EditText input(LinearLayout parent,String hint,String value){EditText e=new EditText(this);e.setHint(hint);e.setText(value);e.setSingleLine();parent.addView(e);return e;}
+ EditText input(LinearLayout parent,String hint,String value){EditText e=new EditText(this);e.setTypeface(face());e.setHint(hint);e.setText(value);e.setSingleLine();parent.addView(e);return e;}
  LinearLayout form(){LinearLayout f=new LinearLayout(this);f.setOrientation(LinearLayout.VERTICAL);f.setPadding(24,8,24,8);return f;}
  void pantry(){
-  label(arr("pantry").length()+" ingredientes disponíveis",15);
+  label("O que tens em casa?",22);label("Adiciona os ingredientes e quantidades para planear os jantares da tua família.",15);
   button("+ Adicionar ingrediente",()->ingredient(-1));
   for(int i=0;i<arr("pantry").length();i++){final int n=i;JSONObject x=arr("pantry").optJSONObject(i);LinearLayout b=box();b.addView(text(x.optString("name")+" · "+number(x.optDouble("qty"))+" "+x.optString("unit"),18));b.addView(text(x.optString("category")+"  ·  Tocar para editar",13));b.setOnClickListener(v->ingredient(n));}
  }
