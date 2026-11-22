@@ -38,6 +38,16 @@ jobs:
         run: |
           if test -n "$KEYSTORE"; then
             printf '%s' "$KEYSTORE" | base64 --decode > "$MESA_KEYSTORE"
+          elif test -n "$RECOVERY_KEY"; then
+            printf '%s' "$RECOVERY_KEY" > "$RUNNER_TEMP/recovery.pem"
+            gh release download v0.1.0-5 --pattern mesa-release.sealed.json --dir signing
+            node scripts/seal-signing.cjs recover "$RUNNER_TEMP/recovery.pem" "$RUNNER_TEMP/recovered"
+            cp "$RUNNER_TEMP/recovered/mesa-release.jks" "$MESA_KEYSTORE"
+            MESA_STORE_PASSWORD=$(node -p "require(process.env.RUNNER_TEMP+'/recovered/signing-private.json').storePassword")
+            MESA_KEY_PASSWORD=$(node -p "require(process.env.RUNNER_TEMP+'/recovered/signing-private.json').keyPassword")
+            echo "::add-mask::$MESA_STORE_PASSWORD"
+            echo "::add-mask::$MESA_KEY_PASSWORD"
+            rm -f "$RUNNER_TEMP/recovery.pem" "$RUNNER_TEMP/recovered/signing-private.json" "$RUNNER_TEMP/recovered/mesa-release.jks"
           else
             test "$(gh release list --json tagName --jq length)" = 0 || { echo 'Recuperar a chave original para atualizar. N�o gerar outra assinatura.'; exit 1; }
             PASS=$(openssl rand -hex 32)
