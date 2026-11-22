@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      MESA_KEYSTORE: ${{ runner.temp }}/mesa.jks
+      MESA_KEYSTORE: ${{ github.workspace }}/../mesa.jks
       MESA_KEY_ALIAS: mesa
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -26,7 +26,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Criar assinatura inicial com recuperação cifrada
+      - name: Criar assinatura inicial com recupera��o cifrada
         env:
           KEYSTORE: ${{ secrets.MESA_KEYSTORE_BASE64 }}
           MESA_STORE_PASSWORD: ${{ secrets.MESA_STORE_PASSWORD }}
@@ -35,7 +35,7 @@ jobs:
           if test -n "$KEYSTORE"; then
             printf '%s' "$KEYSTORE" | base64 --decode > "$MESA_KEYSTORE"
           else
-            test "$(gh release list --json tagName --jq length)" = 0 || { echo 'Recuperar a chave original para atualizar. Não gerar outra assinatura.'; exit 1; }
+            test "$(gh release list --json tagName --jq length)" = 0 || { echo 'Recuperar a chave original para atualizar. N�o gerar outra assinatura.'; exit 1; }
             PASS=$(openssl rand -hex 32)
             echo "::add-mask::$PASS"
             export MESA_STORE_PASSWORD="$PASS" MESA_KEY_PASSWORD="$PASS"
@@ -73,7 +73,7 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           TAG="v0.1.0-${{ github.run_number }}"
-          gh release create "$TAG" dist/mesa-da-semana.apk dist/SHA256SUMS.txt dist/mesa-release.sealed.json --title "Mesa da Semana $TAG" --notes 'Versão inicial: APK assinado e testes automatizados Android. Descoberta automática e acabamento fotográfico ainda em desenvolvimento.'
+          gh release create "$TAG" dist/mesa-da-semana.apk dist/SHA256SUMS.txt dist/mesa-release.sealed.json --title "Mesa da Semana $TAG" --notes 'Vers�o inicial: APK assinado e testes automatizados Android. Descoberta autom�tica e acabamento fotogr�fico ainda em desenvolvimento.'
           URL="https://github.com/$REPO/releases/download/$TAG/mesa-da-semana.apk"
           curl --fail --location --retry 3 "$URL" --output "$RUNNER_TEMP/download.apk"
           cmp dist/mesa-da-semana.apk "$RUNNER_TEMP/download.apk"
@@ -88,6 +88,6 @@ jobs:
             dist/
             app/build/reports/
           retention-days: 7
-      - name: Apagar assinatura temporária
+      - name: Apagar assinatura tempor�ria
         if: always()
         run: rm -f "$MESA_KEYSTORE"
