@@ -89,7 +89,7 @@ jobs:
         env:
           REPO: ${{ github.repository }}
         run: |
-          TAG="v0.4.0-${{ github.run_number }}"
+          TAG="v0.5.0-${{ github.run_number }}"
           gh release create "$TAG" dist/mesa-da-semana.apk dist/SHA256SUMS.txt dist/mesa-release.sealed.json --title "Mesa da Semana $TAG" --notes 'Vers�o inicial: APK assinado e testes automatizados Android. Descoberta autom�tica e acabamento fotogr�fico ainda em desenvolvimento.'
           URL="https://github.com/$REPO/releases/download/$TAG/mesa-da-semana.apk"
           gh release download "$TAG" --pattern mesa-da-semana.apk --dir "$RUNNER_TEMP" --clobber

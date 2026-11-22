@@ -125,23 +125,23 @@ public class MainActivity extends Activity {
  double available(JSONObject x){double q=0;for(int i=0;i<arr("pantry").length();i++){JSONObject p=arr("pantry").optJSONObject(i);if(key(p).equals(key(x)))q+=p.optDouble("qty");}return q;}
  double mainCoverage(JSONObject r){JSONObject x=r.optJSONArray("ingredients").optJSONObject(0);return Math.min(1,available(x)/amount(r,x));}
  double amount(JSONObject r,JSONObject x){return x.optDouble("qty")*prefs().optInt("people")/r.optDouble("servings",4);}
- double score(JSONObject r){double coverage=mainCoverage(r);double score=(coverage>=0.999?10000:coverage>0?1000:0)+coverage*100;JSONArray ingredients=r.optJSONArray("ingredients");for(int i=1;i<ingredients.length();i++){JSONObject x=ingredients.optJSONObject(i);score+=Math.min(1,available(x)/amount(r,x));}return score+Math.random()*0.01;}
+ double score(JSONObject r){double coverage=mainCoverage(r);double score=(coverage>=0.999?10000:coverage>0?1000:0)+coverage*100;JSONArray ingredients=r.optJSONArray("ingredients");for(int i=1;i<ingredients.length();i++){JSONObject x=ingredients.optJSONObject(i);score+=Math.min(1,available(x)/amount(r,x));}return score+(coverage>=0.999&&"peixe".equals(r.optString("type"))?50:0)+("carne".equals(r.optString("type"))?0.1:0)+Math.random()*0.01;}
  JSONObject choose(String type,Set<String> used){
   JSONObject best=null;double value=-1;
   JSONArray all=new JSONArray();for(int i=0;i<catalogue.length();i++)all.put(catalogue.optJSONObject(i));for(int i=0;i<arr("favorites").length();i++)all.put(arr("favorites").optJSONObject(i));
-  for(int i=0;i<all.length();i++){JSONObject r=all.optJSONObject(i);if((!prefs().optBoolean("allowShopping",false)&&mainCoverage(r)<0.999)||!type.equals(r.optString("type"))||r.optInt("minutes")>prefs().optInt("minutes")||used.contains(r.optString("id")))continue;double s=score(r);if(s>value){best=r;value=s;}}
+  for(int i=0;i<all.length();i++){JSONObject r=all.optJSONObject(i);if((!prefs().optBoolean("allowShopping",false)&&mainCoverage(r)<0.999)||(!"carne".equals(r.optString("type"))&&!"peixe".equals(r.optString("type")))||(!"qualquer".equals(type)&&!type.equals(r.optString("type")))||r.optInt("minutes")>prefs().optInt("minutes")||used.contains(r.optString("id")))continue;double s=score(r);if(s>value){best=r;value=s;}}
   return best==null?null:cleanRecipe(best);
  }
  void generate(){
   JSONArray next=new JSONArray();Set<String> used=new HashSet<>();List<String> types=new ArrayList<>();
-  for(int i=0;i<7;i++)types.add(i<prefs().optInt("fish")?"peixe":i<prefs().optInt("fish")+prefs().optInt("meat")?"carne":"vegetariana");
-  Collections.shuffle(types);JSONArray actual=arr("pantry");
+  for(int i=0;i<7;i++)types.add("qualquer");
+  JSONArray actual=arr("pantry");
   try{
    put(state,"pantry",new JSONArray(actual.toString()));
    for(String type:types){
     JSONObject r=choose(type,used);
     if(r==null&&!prefs().optBoolean("allowShopping",false)){
-     double best=-1;for(String alternative:new String[]{"carne","peixe","vegetariana"}){JSONObject option=choose(alternative,used);if(option!=null&&score(option)>best){r=option;best=score(option);}}
+     double best=-1;for(String alternative:new String[]{"carne","peixe"}){JSONObject option=choose(alternative,used);if(option!=null&&score(option)>best){r=option;best=score(option);}}
     }
     if(r==null){if(prefs().optBoolean("allowShopping",false)){toast("Faltam receitas distintas dentro do tempo escolhido. A ementa anterior foi mantida.");return;}break;}
     put(r,"mainFromPantry",mainCoverage(r)>=0.999);used.add(r.optString("id"));next.put(r);consume(r);
@@ -151,10 +151,10 @@ public class MainActivity extends Activity {
   put(state,"plan",next);save();show();if(next.length()<7)toast("Encontradas "+next.length()+" refeições compatíveis com os principais e quantidades da despensa. Não foram acrescentados pratos para comprar.");
  }
  void plan(){
-  label(prefs().optInt("people")+" pessoas · até "+prefs().optInt("minutes")+" min · "+prefs().optInt("fish")+" peixe / "+prefs().optInt("meat")+" carne / "+(7-prefs().optInt("fish")-prefs().optInt("meat"))+" vegetariana",14);
-  label("Modo despensa: só entram pratos com o ingrediente principal suficiente. A distribuição é uma preferência e pode adaptar-se ao que existe. Acompanhamentos e temperos em falta continuam na lista de compras.",14);
+  label(prefs().optInt("people")+" pessoas · até "+prefs().optInt("minutes")+" min · carne e peixe, sem quotas semanais",14);
+  label("Modo despensa: só entram pratos com o ingrediente principal suficiente. Só carne e peixe, com prioridade ao peixe disponível. Acompanhamentos e temperos em falta continuam na lista de compras.",14);
   button("Gerar com o que tenho",()->{put(prefs(),"allowShopping",false);if(arr("plan").length()==0)generate();else new AlertDialog.Builder(this).setMessage("Substituir a ementa em curso?").setPositiveButton("Gerar",(d,w)->generate()).setNegativeButton("Cancelar",null).show();});
-  button("Completar sete jantares com compras",()->new AlertDialog.Builder(this).setMessage("Este modo pode incluir peixe, carne ou leguminosas que não tens. Os ingredientes em falta entram nas compras. Continuar?").setPositiveButton("Incluir compras",(d,w)->{put(prefs(),"allowShopping",true);generate();}).setNegativeButton("Cancelar",null).show());
+  button("Completar sete jantares com compras",()->new AlertDialog.Builder(this).setMessage("Este modo pode incluir peixe ou carne que não tens. Os ingredientes em falta entram nas compras. Continuar?").setPositiveButton("Incluir compras",(d,w)->{put(prefs(),"allowShopping",true);generate();}).setNegativeButton("Cancelar",null).show());
   label(arr("plan").length()+" / 7 jantares planeados",16);
   button("Aprender a cozinhar peixe",()->fish());
   String[] days={"Segunda","Terça","Quarta","Quinta","Sexta","Sábado","Domingo"};
@@ -188,7 +188,60 @@ public class MainActivity extends Activity {
   button("Transferir produtos marcados para a despensa",()->{for(JSONObject x:checked)arr("pantry").put(x);save();show();toast("Compras transferidas.");});
   if(rows.isEmpty())label("Não há ingredientes em falta.",18);
  }
- void favorites(){label("Só fica aqui aquilo que decides guardar.",15);for(int i=0;i<arr("favorites").length();i++){final int n=i;JSONObject r=arr("favorites").optJSONObject(i);card(r,"A tua coleção",()->recipe(r,-1));button("Eliminar "+r.optString("title"),()->{arr("favorites").remove(n);save();show();});}}
+
+ JSONObject manualIngredient(String name,double quantity,String unit,String category)throws Exception{
+  if(name.trim().isEmpty()||!Double.isFinite(quantity)||quantity<=0||!Arrays.asList("g","ml","un").contains(unit))throw new Exception("Preenche o nome, quantidade positiva e unidade de cada ingrediente.");
+  JSONObject item=new JSONObject();put(item,"name",name.trim());put(item,"qty",quantity);put(item,"unit",unit);put(item,"category",category);return item;
+ }
+ JSONObject buildManualRecipe(String title,String type,double servings,int minutes,JSONObject main,JSONArray extras,String preparation)throws Exception{
+  if(title.trim().isEmpty()||!Arrays.asList("carne","peixe").contains(type)||!Double.isFinite(servings)||servings<1||servings>20||minutes<1||minutes>180)throw new Exception("Indica nome, carne ou peixe, 1–20 porções e 1–180 minutos.");
+  JSONArray ingredients=new JSONArray();Set<String> seen=new HashSet<>();
+  JSONObject checked=manualIngredient(main.getString("name"),main.getDouble("qty"),main.getString("unit"),"peixe".equals(type)?"Peixaria":"Talho");ingredients.put(checked);seen.add(key(checked));
+  for(int i=0;i<extras.length();i++){JSONObject x=extras.getJSONObject(i);checked=manualIngredient(x.getString("name"),x.getDouble("qty"),x.getString("unit"),x.optString("category","Outros"));if(!seen.add(key(checked)))throw new Exception("Junta as quantidades dos ingredientes repetidos numa só linha.");ingredients.put(checked);}
+  JSONArray steps=new JSONArray();for(String line:preparation.split("\\n"))if(!line.trim().isEmpty())steps.put(line.trim());
+  if(steps.length()==0)throw new Exception("Escreve pelo menos um passo de preparação.");
+  JSONObject r=new JSONObject();put(r,"id","manual-"+UUID.randomUUID());put(r,"title",title.trim());put(r,"type",type);put(r,"servings",servings);put(r,"minutes",minutes);put(r,"ingredients",ingredients);put(r,"steps",steps);put(r,"technique","Receita de família");put(r,"source","");put(r,"image","");return r;
+ }
+ void storeManualRecipe(JSONObject recipe)throws Exception{
+  JSONObject candidate=new JSONObject(state.toString());candidate.getJSONArray("favorites").put(recipe);validate(candidate);state=candidate;save();
+ }
+ Spinner picker(LinearLayout parent,String[] options){Spinner p=new Spinner(this);ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,options);adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);p.setAdapter(adapter);parent.addView(p);return p;}
+ double decimal(EditText field)throws Exception{return Double.parseDouble(field.getText().toString().trim().replace(',','.'));}
+ void manualRecipe(){
+  LinearLayout f=form();f.addView(text("A receita fica nas Guardadas e pode entrar na ementa. As quantidades são para o número de porções indicado.",14));
+  EditText title=input(f,"Nome da receita","");
+  f.addView(text("Tipo de receita",14));Spinner kind=picker(f,new String[]{"carne","peixe"});
+  EditText servings=input(f,"Porções da receita","4"),minutes=input(f,"Tempo total em minutos","30");
+  servings.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);minutes.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+  f.addView(text("Ingrediente principal — o que deve existir na despensa",17));
+  EditText primaryName=input(f,"Ex.: bifes de frango",""),primaryQty=input(f,"Quantidade do principal","");primaryQty.setInputType(android.text.InputType.TYPE_CLASS_NUMBER|android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL);
+  Spinner primaryUnit=picker(f,new String[]{"g","ml","un"});
+  f.addView(text("Restantes ingredientes",17));
+  LinearLayout extras=new LinearLayout(this);extras.setOrientation(LinearLayout.VERTICAL);f.addView(extras);
+  List<EditText[]> entries=new ArrayList<>();List<Spinner> units=new ArrayList<>();
+  Button add=new Button(this);add.setText("+ Adicionar ingrediente");add.setTypeface(face());f.addView(add);
+  add.setOnClickListener(v->{
+   LinearLayout row=new LinearLayout(this);row.setOrientation(LinearLayout.VERTICAL);row.setPadding(0,dp(8),0,dp(8));extras.addView(row);
+   EditText name=input(row,"Nome do ingrediente",""),qty=input(row,"Quantidade","");qty.setInputType(android.text.InputType.TYPE_CLASS_NUMBER|android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL);
+   Spinner unit=picker(row,new String[]{"g","ml","un"});EditText[] entry={name,qty};entries.add(entry);units.add(unit);
+   Button remove=new Button(this);remove.setText("Remover ingrediente");row.addView(remove);remove.setOnClickListener(clicked->{int index=entries.indexOf(entry);if(index>=0){entries.remove(index);units.remove(index);}extras.removeView(row);});
+  });
+  f.addView(text("Preparação — um passo por linha",17));EditText steps=input(f,"Descreve como preparas esta receita","");steps.setSingleLine(false);steps.setMinLines(5);steps.setGravity(Gravity.TOP);
+  ScrollView sc=new ScrollView(this);sc.addView(f);
+  AlertDialog dialog=new AlertDialog.Builder(this).setTitle("Adicionar receita").setView(sc).setPositiveButton("Guardar receita",null).setNegativeButton("Cancelar",null).create();
+  dialog.setOnShowListener(d->dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v->{
+   try{
+    String type=kind.getSelectedItem().toString();
+    JSONObject principal=manualIngredient(primaryName.getText().toString(),decimal(primaryQty),primaryUnit.getSelectedItem().toString(),"Outros");
+    JSONArray others=new JSONArray();for(int i=0;i<entries.size();i++){EditText[] e=entries.get(i);others.put(manualIngredient(e[0].getText().toString(),decimal(e[1]),units.get(i).getSelectedItem().toString(),"Outros"));}
+    JSONObject recipe=buildManualRecipe(title.getText().toString(),type,decimal(servings),Integer.parseInt(minutes.getText().toString().trim()),principal,others,steps.getText().toString());
+    storeManualRecipe(recipe);dialog.dismiss();page=4;show();toast("Receita guardada. Já pode entrar na ementa.");
+   }catch(Exception e){toast(e instanceof NumberFormatException?"Verifica as porções, os minutos e as quantidades.":e.getMessage());}
+  }));
+  dialog.show();
+ }
+
+ void favorites(){button("+ Adicionar receita",()->manualRecipe());label("Só fica aqui aquilo que decides guardar.",15);for(int i=0;i<arr("favorites").length();i++){final int n=i;JSONObject r=arr("favorites").optJSONObject(i);card(r,"A tua coleção",()->recipe(r,-1));button("Eliminar "+r.optString("title"),()->{arr("favorites").remove(n);save();show();});}}
  void open(String url){try{Uri u=Uri.parse(url);if(!"https".equals(u.getScheme()))throw new Exception();startActivity(new Intent(Intent.ACTION_VIEW,u));}catch(Exception e){toast("Não foi possível abrir a ligação HTTPS.");}}
  void trends(){
   label("Inspiração em movimento",21);label("Pesquisa atual nas plataformas originais. Sem rankings ou métricas de popularidade verificados. Nenhuma pesquisa fica guardada.",15);
@@ -227,7 +280,7 @@ public class MainActivity extends Activity {
   });}).setNegativeButton("Cancelar",null).show();
  }
  void reviewImport(JSONObject raw,String address){
-  LinearLayout f=form();EditText title=input(f,"Nome em português",raw.optString("name"));EditText type=input(f,"peixe, carne ou vegetariana","peixe"),servings=input(f,"Porções originais (confirmar)","4"),minutes=input(f,"Tempo total em minutos (confirmar)","30");
+  LinearLayout f=form();EditText title=input(f,"Nome em português",raw.optString("name"));EditText type=input(f,"peixe ou carne","peixe"),servings=input(f,"Porções originais (confirmar)","4"),minutes=input(f,"Tempo total em minutos (confirmar)","30");
   TextView info=text("Confirma as porções e o tempo na fonte. Normaliza cada ingrediente: nome | quantidade | g/ml/un | categoria. Quantidades originais abaixo; não são convertidas automaticamente.",14);f.addView(info);
   JSONArray originals=raw.optJSONArray("recipeIngredient");StringBuilder lines=new StringBuilder();if(originals!=null)for(int i=0;i<originals.length();i++)lines.append(originals.optString(i)).append("\n");
   EditText ingredients=input(f,"nome | quantidade | unidade | categoria",lines.toString());ingredients.setSingleLine(false);ingredients.setMinLines(4);
@@ -235,7 +288,7 @@ public class MainActivity extends Activity {
   EditText steps=input(f,"Um passo em português por linha",stepsText.toString());steps.setSingleLine(false);steps.setMinLines(4);
   ScrollView scroll=new ScrollView(this);scroll.addView(f);
   new AlertDialog.Builder(this).setTitle("Rever e guardar").setView(scroll).setPositiveButton("Guardar receita",(d,w)->{
-   try{JSONObject r=new JSONObject();put(r,"id",UUID.randomUUID().toString());put(r,"title",title.getText().toString());String category=type.getText().toString().trim();if(!Arrays.asList("peixe","carne","vegetariana").contains(category))throw new Exception();put(r,"type",category);put(r,"minutes",Integer.parseInt(minutes.getText().toString()));put(r,"servings",Integer.parseInt(servings.getText().toString()));put(r,"source",address);
+   try{JSONObject r=new JSONObject();put(r,"id",UUID.randomUUID().toString());put(r,"title",title.getText().toString());String category=type.getText().toString().trim();if(!Arrays.asList("peixe","carne").contains(category))throw new Exception();put(r,"type",category);put(r,"minutes",Integer.parseInt(minutes.getText().toString()));put(r,"servings",Integer.parseInt(servings.getText().toString()));put(r,"source",address);
     Object image=raw.opt("image");String imageUrl=image instanceof String?(String)image:image instanceof JSONArray?((JSONArray)image).optString(0):image instanceof JSONObject?((JSONObject)image).optString("url"):"";put(r,"image",imageUrl);
     JSONArray ing=new JSONArray();for(String line:ingredients.getText().toString().split("\n")){if(line.trim().isEmpty())continue;String[] p=line.split("\\|");if(p.length!=4)throw new Exception();JSONObject x=new JSONObject();put(x,"name",p[0].trim());put(x,"qty",Double.parseDouble(p[1].trim().replace(',','.')));put(x,"unit",p[2].trim());put(x,"category",p[3].trim());ing.put(x);}if(ing.length()==0)throw new Exception();put(r,"ingredients",ing);
     JSONArray cookedSteps=new JSONArray();for(String line:steps.getText().toString().split("\n"))if(!line.trim().isEmpty())cookedSteps.put(line.trim());if(cookedSteps.length()==0)throw new Exception();put(r,"steps",cookedSteps);
@@ -254,10 +307,11 @@ public class MainActivity extends Activity {
    "O peixe deve lascar e perder a translucidez; o termómetro confirma a segurança. Descongelar no frigorífico. Separar utensílios de cru e cozinhado; confirmar espinhas ao servir às crianças. Bacalhau salgado precisa de demolha refrigerada.").setPositiveButton("Entendido",null).setNeutralButton("Fonte de segurança",(d,w)->open("https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures")).show();
  }
  void settings(){
-  LinearLayout f=form();EditText people=input(f,"Pessoas (1–20)",""+prefs().optInt("people")),minutes=input(f,"Tempo máximo (10–180 min)",""+prefs().optInt("minutes")),fish=input(f,"Jantares de peixe (0–7)",""+prefs().optInt("fish")),meat=input(f,"Jantares de carne (0–7)",""+prefs().optInt("meat"));
+  LinearLayout f=form();EditText people=input(f,"Pessoas (1–20)",""+prefs().optInt("people")),minutes=input(f,"Tempo máximo (10–180 min)",""+prefs().optInt("minutes"));
+  f.addView(text("Só carne e peixe. A ementa segue a despensa, com prioridade ao peixe disponível; não há distribuição fixa.",14));
   Button export=new Button(this);export.setText("Exportar dados");f.addView(export);export.setOnClickListener(v->{Intent i=new Intent(Intent.ACTION_CREATE_DOCUMENT).setType("application/json").putExtra(Intent.EXTRA_TITLE,"mesa-da-semana.json");i.addCategory(Intent.CATEGORY_OPENABLE);startActivityForResult(i,10);});
   Button imp=new Button(this);imp.setText("Importar dados · substitui os atuais");f.addView(imp);imp.setOnClickListener(v->new AlertDialog.Builder(this).setMessage("Importar substitui todos os dados. Exporta primeiro se precisares de uma cópia.").setPositiveButton("Escolher ficheiro",(d,w)->{Intent i=new Intent(Intent.ACTION_OPEN_DOCUMENT).setType("application/json");i.addCategory(Intent.CATEGORY_OPENABLE);startActivityForResult(i,11);}).setNegativeButton("Cancelar",null).show());
-  new AlertDialog.Builder(this).setTitle("Preferências").setView(f).setPositiveButton("Guardar",(d,w)->{try{JSONObject p=new JSONObject();put(p,"people",Integer.parseInt(people.getText().toString()));put(p,"minutes",Integer.parseInt(minutes.getText().toString()));put(p,"fish",Integer.parseInt(fish.getText().toString()));put(p,"meat",Integer.parseInt(meat.getText().toString()));JSONObject candidate=new JSONObject(state.toString());put(candidate,"preferences",p);validate(candidate);state=candidate;save();show();}catch(Exception e){toast("Verifica os limites. Peixe + carne não podem exceder sete.");}}).setNegativeButton("Cancelar",null).show();
+  new AlertDialog.Builder(this).setTitle("Preferências").setView(f).setPositiveButton("Guardar",(d,w)->{try{JSONObject p=new JSONObject(prefs().toString());put(p,"people",Integer.parseInt(people.getText().toString()));put(p,"minutes",Integer.parseInt(minutes.getText().toString()));JSONObject candidate=new JSONObject(state.toString());put(candidate,"preferences",p);validate(candidate);state=candidate;save();show();}catch(Exception e){toast("Verifica os limites de pessoas e tempo.");}}).setNegativeButton("Cancelar",null).show();
  }
  @Override protected void onActivityResult(int request,int result,Intent data){super.onActivityResult(request,result,data);if(result!=RESULT_OK||data==null||data.getData()==null)return;try{if(request==10){try(OutputStream out=getContentResolver().openOutputStream(data.getData())){out.write(state.toString(2).getBytes("UTF-8"));}toast("Dados exportados.");}if(request==11){JSONObject next=new JSONObject(read(getContentResolver().openInputStream(data.getData()),2000000));validate(next);state=next;save();show();toast("Dados importados.");}}catch(Exception e){toast("Operação falhou. Os dados existentes foram preservados.");}}
  @Override protected void onDestroy(){network.shutdownNow();super.onDestroy();}
