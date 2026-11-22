@@ -1,0 +1,93 @@
+name: Android APK e QR
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mesa-release
+  cancel-in-progress: false
+jobs:
+  android:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MESA_KEYSTORE: ${{ runner.temp }}/mesa.jks
+      MESA_KEY_ALIAS: mesa
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Criar assinatura inicial com recuperação cifrada
+        env:
+          KEYSTORE: ${{ secrets.MESA_KEYSTORE_BASE64 }}
+          MESA_STORE_PASSWORD: ${{ secrets.MESA_STORE_PASSWORD }}
+          MESA_KEY_PASSWORD: ${{ secrets.MESA_KEY_PASSWORD }}
+        run: |
+          if test -n "$KEYSTORE"; then
+            printf '%s' "$KEYSTORE" | base64 --decode > "$MESA_KEYSTORE"
+          else
+            test "$(gh release list --json tagName --jq length)" = 0 || { echo 'Recuperar a chave original para atualizar. Não gerar outra assinatura.'; exit 1; }
+            PASS=$(openssl rand -hex 32)
+            echo "::add-mask::$PASS"
+            export MESA_STORE_PASSWORD="$PASS" MESA_KEY_PASSWORD="$PASS"
+            keytool -genkeypair -keystore "$MESA_KEYSTORE" -storetype PKCS12 -alias mesa -keyalg RSA -keysize 3072 -validity 10000 -storepass:env MESA_STORE_PASSWORD -keypass:env MESA_KEY_PASSWORD -dname 'CN=Mesa da Semana,O=Mesa da Semana,C=PT'
+          fi
+          echo "MESA_STORE_PASSWORD=$MESA_STORE_PASSWORD" >> "$GITHUB_ENV"
+          echo "MESA_KEY_PASSWORD=$MESA_KEY_PASSWORD" >> "$GITHUB_ENV"
+          chmod 600 "$MESA_KEYSTORE"
+      - name: Compilar e verificar assinatura
+        run: |
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+          python3 scripts/validate.py
+          gradle --no-daemon lintRelease assembleRelease assembleDebugAndroidTest
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs app/build/outputs/apk/release/app-release.apk
+          mkdir -p dist
+          cp app/build/outputs/apk/release/app-release.apk dist/mesa-da-semana.apk
+          sha256sum dist/mesa-da-semana.apk > dist/SHA256SUMS.txt
+          node scripts/seal-signing.cjs seal
+          cp signing/mesa-release.sealed.json dist/
+      - name: Preparar KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Testes Android
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          arch: x86_64
+          profile: pixel_2
+          disable-animations: true
+          script: gradle --no-daemon connectedDebugAndroidTest
+      - name: Publicar APK e QR verificado
+        env:
+          REPO: ${{ github.repository }}
+        run: |
+          TAG="v0.1.0-${{ github.run_number }}"
+          gh release create "$TAG" dist/mesa-da-semana.apk dist/SHA256SUMS.txt dist/mesa-release.sealed.json --title "Mesa da Semana $TAG" --notes 'Versão inicial: APK assinado e testes automatizados Android. Descoberta automática e acabamento fotográfico ainda em desenvolvimento.'
+          URL="https://github.com/$REPO/releases/download/$TAG/mesa-da-semana.apk"
+          curl --fail --location --retry 3 "$URL" --output "$RUNNER_TEMP/download.apk"
+          cmp dist/mesa-da-semana.apk "$RUNNER_TEMP/download.apk"
+          python3 -m pip install 'qrcode[pil]==8.2'
+          python3 scripts/qr.py "$URL" dist/mesa-da-semana-qr.png
+          gh release upload "$TAG" dist/mesa-da-semana-qr.png
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesa-validacao
+          path: |
+            dist/
+            app/build/reports/
+          retention-days: 7
+      - name: Apagar assinatura temporária
+        if: always()
+        run: rm -f "$MESA_KEYSTORE"

@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-11-22",
+  "static_content": "passed",
+  "recipe_count": 24,
+  "android_build": "not_run_no_JDK_SDK_Gradle",
+  "device_tests": "not_run",
+  "remote_repository": "not_created",
+  "apk": "not_created",
+  "qr": "not_created_without_real_apk_url"
+}

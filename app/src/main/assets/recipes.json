@@ -1,0 +1,1029 @@
+[
+  {
+    "id": "base-0",
+    "title": "Salmão de frigideira com arroz e limão",
+    "type": "peixe",
+    "technique": "Frigideira",
+    "minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "salmão",
+        "qty": 600,
+        "unit": "g",
+        "category": "Peixaria"
+      },
+      {
+        "name": "arroz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Seca o salmão. Tempera com parte do azeite e sal. Aquece uma frigideira em lume médio-alto. Cozinha com a pele para baixo 4–6 min e vira por 2–4 min, ajustando à espessura.",
+      "Finaliza com sumo de limão a gosto.",
+      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-1",
+    "title": "Dourada no forno com batata fina",
+    "type": "peixe",
+    "technique": "Forno",
+    "minutes": 40,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "dourada",
+        "qty": 1200,
+        "unit": "g",
+        "category": "Peixaria"
+      },
+      {
+        "name": "batata",
+        "qty": 800,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Aquece o forno a 190 °C. Corta a batata em rodelas finas e leva ao forno com azeite e um pouco de água durante 15 min. Junta a dourada limpa e cozinha mais 20–25 min.",
+      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-2",
+    "title": "Robalo em papelote com curgete",
+    "type": "peixe",
+    "technique": "Papelote",
+    "minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "robalo",
+        "qty": 700,
+        "unit": "g",
+        "category": "Peixaria"
+      },
+      {
+        "name": "curgete",
+        "qty": 600,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Aquece o forno a 190 °C. Divide os filetes e a curgete fina por quatro folhas de papel vegetal. Tempera e fecha os papelotes. Cozinha 15–20 min; abre com cuidado para evitar o vapor.",
+      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-3",
+    "title": "Pescada dourada com cuscuz",
+    "type": "peixe",
+    "technique": "Frigideira",
+    "minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "pescada",
+        "qty": 700,
+        "unit": "g",
+        "category": "Peixaria"
+      },
+      {
+        "name": "cuscuz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Hidrata o cuscuz com igual volume de água a ferver, tapa 5 min e solta com um garfo. Seca os lombos e salteia no azeite 4–6 min de cada lado, conforme a espessura.",
+      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-4",
+    "title": "Bacalhau na air fryer com grão",
+    "type": "peixe",
+    "technique": "Air fryer",
+    "minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "bacalhau demolhado",
+        "qty": 700,
+        "unit": "g",
+        "category": "Peixaria"
+      },
+      {
+        "name": "grão cozido",
+        "qty": 600,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Seca o bacalhau já demolhado e descongelado. Pincela com azeite e alho. Cozinha na air fryer a 180 °C por 10–15 min sem sobrepor. Aquece o grão num tacho com um pouco de água e azeite.",
+      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-5",
+    "title": "Carapau grelhado com batata",
+    "type": "peixe",
+    "technique": "Grelhado",
+    "minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "carapau",
+        "qty": 1000,
+        "unit": "g",
+        "category": "Peixaria"
+      },
+      {
+        "name": "batata",
+        "qty": 800,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Coze a batata em água cerca de 20 min, até ficar tenra. Aquece e unta a grelha. Seca o carapau limpo e grelha 4–6 min de cada lado, ajustando ao tamanho.",
+      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-6",
+    "title": "Salmão em papelote com brócolos",
+    "type": "peixe",
+    "technique": "Papelote",
+    "minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "salmão",
+        "qty": 600,
+        "unit": "g",
+        "category": "Peixaria"
+      },
+      {
+        "name": "brócolos",
+        "qty": 600,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Aquece o forno a 190 °C. Corta os brócolos pequenos. Fecha o peixe e os brócolos em quatro papelotes com azeite e uma colher de água por porção. Cozinha 15–20 min.",
+      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-7",
+    "title": "Pescada no forno com tomate",
+    "type": "peixe",
+    "technique": "Forno",
+    "minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "pescada",
+        "qty": 700,
+        "unit": "g",
+        "category": "Peixaria"
+      },
+      {
+        "name": "tomate",
+        "qty": 600,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Aquece o forno a 190 °C. Corta o tomate e espalha num tabuleiro com alho e azeite. Assa 10 min. Junta a pescada e cozinha mais 15–20 min.",
+      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-8",
+    "title": "Frango salteado com arroz",
+    "type": "carne",
+    "technique": "Frigideira",
+    "minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "peito de frango",
+        "qty": 650,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "arroz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Corta o frango em tiras uniformes. Aquece o azeite e salteia 8–12 min, mexendo. Coze o arroz à parte segundo a embalagem. Confirma que o frango atinge 74 °C no centro.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-9",
+    "title": "Peru com curgete e cuscuz",
+    "type": "carne",
+    "technique": "Frigideira",
+    "minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "peito de peru",
+        "qty": 650,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "cuscuz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "curgete",
+        "qty": 400,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Corta o peru em tiras. Salteia no azeite durante 8–12 min até atingir 74 °C no centro. Hidrata o cuscuz com igual volume de água a ferver, tapa 5 min e solta com um garfo.",
+      "Salteia a curgete em cubos num pouco do azeite durante 7–10 min e serve ao lado.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-10",
+    "title": "Lombo de porco com batata na air fryer",
+    "type": "carne",
+    "technique": "Air fryer",
+    "minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "lombo de porco",
+        "qty": 700,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "batata",
+        "qty": 800,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Corta a batata em cubos pequenos. Cozinha na air fryer a 190 °C durante cerca de 15 min. Junta o porco em medalhões num cesto sem sobreposição; cozinha cerca de 12–16 min, confirmando 63 °C no centro e repouso de 3 min.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-11",
+    "title": "Frango de forno com tomate",
+    "type": "carne",
+    "technique": "Forno",
+    "minutes": 40,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "peito de frango",
+        "qty": 700,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "tomate",
+        "qty": 600,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Aquece o forno a 190 °C. Dispõe o frango sobre o tomate cortado. Junta azeite e alho. Cozinha 25–35 min, conforme espessura, e confirma 74 °C no centro.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-12",
+    "title": "Almôndegas de vaca com massa",
+    "type": "carne",
+    "technique": "Tacho",
+    "minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "carne de vaca picada",
+        "qty": 650,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "massa",
+        "qty": 320,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Forma pequenas almôndegas com a carne e sal. Aloura no azeite e junta 300 ml de água. Tapa e cozinha 15–20 min, até atingir 71 °C no centro. Coze a massa segundo a embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-13",
+    "title": "Peru grelhado com batata",
+    "type": "carne",
+    "technique": "Grelhado",
+    "minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "peito de peru",
+        "qty": 650,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "batata",
+        "qty": 800,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Coze a batata cortada em água durante cerca de 20 min. Grelha os bifes de peru numa chapa quente 4–6 min por lado, conforme espessura; confirma 74 °C no centro.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-14",
+    "title": "Porco salteado com arroz",
+    "type": "carne",
+    "technique": "Frigideira",
+    "minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "lombo de porco",
+        "qty": 650,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "arroz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Corta o porco em tiras. Salteia no azeite com alho 8–12 min. Confirma 63 °C no centro e deixa repousar 3 min. Coze o arroz segundo a embalagem.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-15",
+    "title": "Frango na air fryer com brócolos",
+    "type": "carne",
+    "technique": "Air fryer",
+    "minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "peito de frango",
+        "qty": 650,
+        "unit": "g",
+        "category": "Talho"
+      },
+      {
+        "name": "brócolos",
+        "qty": 600,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Corta o frango em pedaços uniformes e os brócolos em floretes pequenos. Tempera com azeite e alho. Cozinha a 180 °C durante 15–20 min, mexendo a meio. Confirma 74 °C no frango.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-16",
+    "title": "Grão crocante com cuscuz",
+    "type": "vegetariana",
+    "technique": "Frigideira",
+    "minutes": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "grão cozido",
+        "qty": 700,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "cuscuz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Escorre e seca o grão. Salteia no azeite 8–10 min com alho. Hidrata o cuscuz com igual volume de água a ferver durante 5 min e solta com um garfo.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-17",
+    "title": "Massa cremosa de feijão branco",
+    "type": "vegetariana",
+    "technique": "Tacho",
+    "minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "feijão branco cozido",
+        "qty": 700,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "massa",
+        "qty": 320,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Coze a massa segundo a embalagem e reserva 200 ml da água. Tritura metade do feijão com essa água e alho. Aquece o creme com o restante feijão, envolve na massa e junta azeite.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-18",
+    "title": "Arroz de lentilhas e tomate",
+    "type": "vegetariana",
+    "technique": "Tacho",
+    "minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "lentilhas cozidas",
+        "qty": 700,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "arroz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "tomate",
+        "qty": 400,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Aquece o azeite com alho num tacho. Junta arroz e água segundo a embalagem. Cozinha até ficar tenro, junta as lentilhas escorridas e aquece mais 5 min.",
+      "Corta o tomate e serve como salada, temperado com parte do azeite.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-19",
+    "title": "Batata com grão e alho",
+    "type": "vegetariana",
+    "technique": "Forno",
+    "minutes": 40,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "grão cozido",
+        "qty": 700,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "batata",
+        "qty": 800,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Aquece o forno a 200 °C. Corta a batata em cubos pequenos, envolve no azeite e assa 25 min. Junta o grão e alho e assa mais 10 min.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-20",
+    "title": "Cuscuz com feijão e brócolos",
+    "type": "vegetariana",
+    "technique": "Tacho",
+    "minutes": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "feijão branco cozido",
+        "qty": 700,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "cuscuz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "brócolos",
+        "qty": 400,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Hidrata o cuscuz com igual volume de água a ferver por 5 min. Aquece o feijão com um pouco de água durante 5 min, escorre e envolve com o azeite e alho.",
+      "Coze os brócolos em água por 5–7 min e serve ao lado.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-21",
+    "title": "Lentilhas salteadas com curgete",
+    "type": "vegetariana",
+    "technique": "Frigideira",
+    "minutes": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "lentilhas cozidas",
+        "qty": 800,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "curgete",
+        "qty": 700,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Corta a curgete em meias-luas. Salteia no azeite 7–10 min. Junta as lentilhas escorridas e alho e aquece mais 5 min.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-22",
+    "title": "Massa com grão e tomate",
+    "type": "vegetariana",
+    "technique": "Tacho",
+    "minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "grão cozido",
+        "qty": 700,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "massa",
+        "qty": 320,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "tomate",
+        "qty": 400,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Coze a massa segundo a embalagem. Aquece o grão num tacho com alho, azeite e 150 ml da água da massa. Junta a massa escorrida e envolve durante 2 min.",
+      "Corta o tomate e serve como salada, temperado com parte do azeite.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  },
+  {
+    "id": "base-23",
+    "title": "Feijão branco com arroz de alho",
+    "type": "vegetariana",
+    "technique": "Tacho",
+    "minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "feijão branco cozido",
+        "qty": 700,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "arroz",
+        "qty": 280,
+        "unit": "g",
+        "category": "Mercearia"
+      },
+      {
+        "name": "azeite",
+        "qty": 30,
+        "unit": "ml",
+        "category": "Mercearia"
+      },
+      {
+        "name": "alho",
+        "qty": 2,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      }
+    ],
+    "steps": [
+      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
+      "Aquece o azeite e alho num tacho. Junta arroz e água segundo a embalagem. Quando o arroz estiver cozido, envolve o feijão escorrido e aquece por mais 3–5 min.",
+      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+    ],
+    "source": "",
+    "image": ""
+  }
+]
