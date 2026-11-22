@@ -70,12 +70,12 @@ public class MainActivity extends Activity {
  void label(String s,int size){content.addView(text(s,size));}
  void button(String s,Runnable action){Button b=new Button(this);b.setText(s);b.setTextColor(GREEN);b.setAllCaps(false);content.addView(b);b.setOnClickListener(v->action.run());}
  void toast(String s){Toast.makeText(this,s,Toast.LENGTH_LONG).show();}
- LinearLayout box(){LinearLayout b=new LinearLayout(this);b.setOrientation(1);b.setPadding(18,14,18,14);GradientDrawable bg=new GradientDrawable();bg.setColor(Color.WHITE);bg.setCornerRadius(28);b.setBackground(bg);LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,8,0,12);content.addView(b,lp);return b;}
+ LinearLayout box(){LinearLayout b=new LinearLayout(this);b.setOrientation(LinearLayout.VERTICAL);b.setPadding(18,14,18,14);GradientDrawable bg=new GradientDrawable();bg.setColor(Color.WHITE);bg.setCornerRadius(28);b.setBackground(bg);LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,8,0,12);content.addView(b,lp);return b;}
  void show(){
-  LinearLayout root=new LinearLayout(this);root.setOrientation(1);root.setBackgroundColor(CREAM);root.setPadding(12,16,12,12);root.setOnApplyWindowInsetsListener((v,insets)->{v.setPadding(12,insets.getSystemWindowInsetTop()+16,12,insets.getSystemWindowInsetBottom()+12);return insets;});
+  LinearLayout root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);root.setBackgroundColor(CREAM);root.setPadding(12,16,12,12);root.setOnApplyWindowInsetsListener((v,insets)->{v.setPadding(12,insets.getSystemWindowInsetTop()+16,12,insets.getSystemWindowInsetBottom()+12);return insets;});
   TextView brand=text("MESA DA SEMANA  ◷",22);brand.setTypeface(null,Typeface.BOLD);root.addView(brand);
   TextView settings=text("A tua família, à mesa.                         ⚙",14);root.addView(settings);settings.setOnClickListener(v->settings());
-  ScrollView scroll=new ScrollView(this);content=new LinearLayout(this);content.setOrientation(1);scroll.addView(content);root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
+  ScrollView scroll=new ScrollView(this);content=new LinearLayout(this);content.setOrientation(LinearLayout.VERTICAL);scroll.addView(content);root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
   LinearLayout nav=new LinearLayout(this);
   for(int i=0;i<5;i++){final int index=i;TextView t=text(tabs[i],11);t.setGravity(Gravity.CENTER);t.setMinHeight(56);t.setTypeface(null,i==page?Typeface.BOLD:Typeface.NORMAL);nav.addView(t,new LinearLayout.LayoutParams(0,-2,1));t.setOnClickListener(v->{page=index;show();});}
   root.addView(nav);setContentView(root);
@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
   if(page==0)pantry();if(page==1)plan();if(page==2)trends();if(page==3)shopping();if(page==4)favorites();
  }
  EditText input(LinearLayout parent,String hint,String value){EditText e=new EditText(this);e.setHint(hint);e.setText(value);e.setSingleLine();parent.addView(e);return e;}
- LinearLayout form(){LinearLayout f=new LinearLayout(this);f.setOrientation(1);f.setPadding(24,8,24,8);return f;}
+ LinearLayout form(){LinearLayout f=new LinearLayout(this);f.setOrientation(LinearLayout.VERTICAL);f.setPadding(24,8,24,8);return f;}
  void pantry(){
   label(arr("pantry").length()+" ingredientes disponíveis",15);
   button("+ Adicionar ingrediente",()->ingredient(-1));
