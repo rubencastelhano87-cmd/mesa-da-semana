@@ -1,0 +1,26 @@
+name: Publicar QR do APK existente
+on:
+  push:
+    paths: ['.github/workflows/delivery.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  qr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verificar APK publicado e gerar QR compacto
+        run: |
+          mkdir -p dist
+          gh release download v0.1.0-5 --pattern mesa-da-semana.apk --pattern SHA256SUMS.txt --dir dist
+          sha256sum -c dist/SHA256SUMS.txt
+          python -m pip install 'qrcode[pil]==8.2'
+          python scripts/qr.py 'https://github.com/rubencastelhano87-cmd/mesa-da-semana/releases/download/v0.1.0-5/mesa-da-semana.apk' dist/mesa-da-semana-qr.png
+          gh release upload v0.1.0-5 dist/mesa-da-semana-qr.png --clobber
