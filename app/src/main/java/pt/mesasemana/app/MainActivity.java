@@ -129,7 +129,7 @@ public class MainActivity extends Activity {
  JSONObject choose(String type,Set<String> used){
   JSONObject best=null;double value=-1;
   JSONArray all=new JSONArray();for(int i=0;i<catalogue.length();i++)all.put(catalogue.optJSONObject(i));for(int i=0;i<arr("favorites").length();i++)all.put(arr("favorites").optJSONObject(i));
-  for(int i=0;i<all.length();i++){JSONObject r=all.optJSONObject(i);if(!type.equals(r.optString("type"))||r.optInt("minutes")>prefs().optInt("minutes")||used.contains(r.optString("id")))continue;double s=score(r);if(s>value){best=r;value=s;}}
+  for(int i=0;i<all.length();i++){JSONObject r=all.optJSONObject(i);if((!prefs().optBoolean("allowShopping",false)&&mainCoverage(r)<0.999)||!type.equals(r.optString("type"))||r.optInt("minutes")>prefs().optInt("minutes")||used.contains(r.optString("id")))continue;double s=score(r);if(s>value){best=r;value=s;}}
   return best==null?null:cleanRecipe(best);
  }
  void generate(){
@@ -138,15 +138,24 @@ public class MainActivity extends Activity {
   Collections.shuffle(types);JSONArray actual=arr("pantry");
   try{
    put(state,"pantry",new JSONArray(actual.toString()));
-   for(String type:types){JSONObject r=choose(type,used);if(r==null){toast("Faltam receitas distintas de "+type+" dentro do tempo escolhido. A ementa anterior foi mantida.");return;}put(r,"mainFromPantry",mainCoverage(r)>=0.999);used.add(r.optString("id"));next.put(r);consume(r);}
+   for(String type:types){
+    JSONObject r=choose(type,used);
+    if(r==null&&!prefs().optBoolean("allowShopping",false)){
+     double best=-1;for(String alternative:new String[]{"carne","peixe","vegetariana"}){JSONObject option=choose(alternative,used);if(option!=null&&score(option)>best){r=option;best=score(option);}}
+    }
+    if(r==null){if(prefs().optBoolean("allowShopping",false)){toast("Faltam receitas distintas dentro do tempo escolhido. A ementa anterior foi mantida.");return;}break;}
+    put(r,"mainFromPantry",mainCoverage(r)>=0.999);used.add(r.optString("id"));next.put(r);consume(r);
+   }
   }catch(Exception e){toast("Não foi possível gerar a ementa. Dados preservados.");return;}
   finally{put(state,"pantry",actual);}
-  put(state,"plan",next);save();show();
+  put(state,"plan",next);save();show();if(next.length()<7)toast("Encontradas "+next.length()+" refeições compatíveis com os principais e quantidades da despensa. Não foram acrescentados pratos para comprar.");
  }
  void plan(){
   label(prefs().optInt("people")+" pessoas · até "+prefs().optInt("minutes")+" min · "+prefs().optInt("fish")+" peixe / "+prefs().optInt("meat")+" carne / "+(7-prefs().optInt("fish")-prefs().optInt("meat"))+" vegetariana",14);
-  label("A despensa tem prioridade. A distribuição de peixe/carne continua a ser respeitada: os pratos sem principal suficiente ficam assinalados para compras.",14);
-  button("Gerar sete jantares",()->{if(arr("plan").length()==0)generate();else new AlertDialog.Builder(this).setMessage("Substituir a ementa em curso?").setPositiveButton("Gerar",(d,w)->generate()).setNegativeButton("Cancelar",null).show();});
+  label("Modo despensa: só entram pratos com o ingrediente principal suficiente. A distribuição é uma preferência e pode adaptar-se ao que existe. Acompanhamentos e temperos em falta continuam na lista de compras.",14);
+  button("Gerar com o que tenho",()->{put(prefs(),"allowShopping",false);if(arr("plan").length()==0)generate();else new AlertDialog.Builder(this).setMessage("Substituir a ementa em curso?").setPositiveButton("Gerar",(d,w)->generate()).setNegativeButton("Cancelar",null).show();});
+  button("Completar sete jantares com compras",()->new AlertDialog.Builder(this).setMessage("Este modo pode incluir peixe, carne ou leguminosas que não tens. Os ingredientes em falta entram nas compras. Continuar?").setPositiveButton("Incluir compras",(d,w)->{put(prefs(),"allowShopping",true);generate();}).setNegativeButton("Cancelar",null).show());
+  label(arr("plan").length()+" / 7 jantares planeados",16);
   button("Aprender a cozinhar peixe",()->fish());
   String[] days={"Segunda","Terça","Quarta","Quinta","Sexta","Sábado","Domingo"};
   for(int i=0;i<arr("plan").length();i++){final int n=i;JSONObject r=arr("plan").optJSONObject(i);card(r,days[i]+(r.optBoolean("cooked")?" · Preparada":""),()->recipe(r,n));}

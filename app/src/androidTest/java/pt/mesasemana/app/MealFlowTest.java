@@ -17,12 +17,12 @@ public class MealFlowTest {
     assertEquals(a.canonical("frango partigo"),a.canonical("frango em pedaços"));
     assertNotEquals(a.canonical("lombo cachaço sem osso"),a.canonical("lombo de porco"));
     assertNotEquals(a.canonical("frango partido"),a.canonical("peito de frango"));
-    a.put(a.state,"pantry",new JSONArray());a.put(a.state,"favorites",new JSONArray());a.put(a.state,"plan",new JSONArray());
+    a.put(a.prefs(),"allowShopping",false);a.put(a.state,"pantry",new JSONArray());a.put(a.state,"favorites",new JSONArray());a.put(a.state,"plan",new JSONArray());
     a.put(a.prefs(),"people",4);a.put(a.prefs(),"minutes",45);a.put(a.prefs(),"fish",0);a.put(a.prefs(),"meat",7);
     JSONObject stock=new JSONObject();a.put(stock,"name","bifes de frango");a.put(stock,"qty",700);a.put(stock,"unit","g");a.put(stock,"category","Outros");a.arr("pantry").put(stock);
     a.generate();int supported=0;
     for(int i=0;i<a.arr("plan").length();i++){JSONObject r=a.arr("plan").optJSONObject(i);if(r.optBoolean("mainFromPantry")){supported++;assertEquals("peito de frango",a.canonical(r.optJSONArray("ingredients").optJSONObject(0).optString("name")));}}
-    assertEquals(1,supported);assertEquals(700,a.available(stock),0.001);
+    assertEquals(1,supported);assertEquals(1,a.arr("plan").length());assertEquals(700,a.available(stock),0.001);
     a.put(a.prefs(),"fish",3);a.put(a.prefs(),"meat",3);a.put(a.state,"pantry",new JSONArray());a.save();
    });
   }
@@ -30,7 +30,7 @@ public class MealFlowTest {
  @Test public void weeklyDistributionScalingAndStockNeverNegative(){
   try(ActivityScenario<MainActivity> scenario=ActivityScenario.launch(MainActivity.class)){
    scenario.onActivity(a->{
-    a.put(a.state,"plan",new JSONArray());a.put(a.state,"pantry",new JSONArray());
+    a.put(a.prefs(),"allowShopping",true);a.put(a.state,"plan",new JSONArray());a.put(a.state,"pantry",new JSONArray());
     a.put(a.prefs(),"people",4);a.put(a.prefs(),"minutes",45);a.put(a.prefs(),"fish",3);a.put(a.prefs(),"meat",3);
     a.generate();assertEquals(7,a.arr("plan").length());
     Map<String,Integer> count=new HashMap<>();Set<String> ids=new HashSet<>();
@@ -46,7 +46,7 @@ public class MealFlowTest {
  }
  @Test public void impossibleMenuPreservesExistingPlanAndDataSurvivesRecreation(){
   try(ActivityScenario<MainActivity> scenario=ActivityScenario.launch(MainActivity.class)){
-   scenario.onActivity(a->{a.put(a.prefs(),"minutes",45);a.generate();String existing=a.arr("plan").toString();a.put(a.prefs(),"minutes",10);a.generate();assertEquals(existing,a.arr("plan").toString());a.put(a.prefs(),"minutes",45);a.put(a.prefs(),"people",5);a.save();});
+   scenario.onActivity(a->{a.put(a.prefs(),"allowShopping",true);a.put(a.prefs(),"minutes",45);a.generate();String existing=a.arr("plan").toString();a.put(a.prefs(),"minutes",10);a.generate();assertEquals(existing,a.arr("plan").toString());a.put(a.prefs(),"minutes",45);a.put(a.prefs(),"people",5);a.save();});
    scenario.recreate();
    scenario.onActivity(a->{assertEquals(5,a.prefs().optInt("people"));assertEquals(7,a.arr("plan").length());});
   }
