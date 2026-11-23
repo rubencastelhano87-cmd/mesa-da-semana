@@ -72,5 +72,37 @@ public class MealFlowTest {
    scenario.recreate();scenario.onActivity(a->{boolean found=false;for(int i=0;i<a.arr("favorites").length();i++)if(id[0].equals(a.arr("favorites").optJSONObject(i).optString("id")))found=true;assertTrue(found);});
   }
  }
+
+ @Test public void enrichedCatalogueUpdatesOnlyBuiltInRecipesAndShoppingIncludesSeasonings(){
+  try(ActivityScenario<MainActivity> scenario=ActivityScenario.launch(MainActivity.class)){
+   scenario.onActivity(a->{
+    try{
+     JSONObject chicken=null;int revised=0;
+     for(int i=0;i<a.catalogue.length();i++){JSONObject r=a.catalogue.getJSONObject(i);if("base-8".equals(r.getString("id")))chicken=r;if(!"vegetariana".equals(r.getString("type"))){assertEquals(6,r.getInt("catalogueRevision"));assertTrue(r.getJSONArray("steps").length()>=6);revised++;}}
+     assertEquals(19,revised);assertNotNull(chicken);
+     JSONObject old=copy(chicken);a.put(old,"steps",new JSONArray().put("Versão antiga"));
+     JSONObject family=copy(chicken);a.put(family,"id","manual-preserve-test");a.put(family,"title","Receita da família");a.put(family,"steps",new JSONArray().put("Os meus passos"));
+     JSONObject cooked=copy(old);a.put(cooked,"cooked",true);
+     a.put(a.state,"favorites",new JSONArray().put(old).put(family));
+     a.put(a.state,"plan",new JSONArray().put(cooked).put(old));
+     a.refreshCatalogueRecipes();
+     assertTrue(a.arr("favorites").getJSONObject(0).getJSONArray("steps").length()>=6);
+     assertEquals("Os meus passos",a.arr("favorites").getJSONObject(1).getJSONArray("steps").getString(0));
+     assertEquals("Versão antiga",a.arr("plan").getJSONObject(0).getJSONArray("steps").getString(0));
+     assertTrue(a.arr("plan").getJSONObject(1).getJSONArray("steps").length()>=6);
+     a.put(a.state,"plan",new JSONArray().put(copy(chicken)));a.put(a.state,"pantry",new JSONArray());a.put(a.prefs(),"people",4);
+     a.content.removeAllViews();a.shopping();
+     String rendered=renderedText(a.content);assertTrue(rendered.contains("natas"));assertTrue(rendered.contains("mostarda"));assertTrue(rendered.contains("pimenta"));
+     a.save();
+    }catch(Exception e){throw new AssertionError(e);}
+   });
+  }
+ }
+ private static String renderedText(android.view.View view){
+  StringBuilder out=new StringBuilder();if(view instanceof android.widget.TextView)out.append(((android.widget.TextView)view).getText()).append(" ");
+  if(view instanceof android.view.ViewGroup){android.view.ViewGroup group=(android.view.ViewGroup)view;for(int i=0;i<group.getChildCount();i++)out.append(renderedText(group.getChildAt(i)));}
+  return out.toString();
+ }
+
  private static JSONObject copy(JSONObject source){try{return new JSONObject(source.toString());}catch(Exception e){throw new AssertionError(e);}}
 }

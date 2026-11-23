@@ -1,10 +1,10 @@
 [
   {
     "id": "base-0",
-    "title": "Salmão de frigideira com arroz e limão",
+    "title": "Salmão com manteiga de limão e alcaparras, arroz de salsa",
     "type": "peixe",
     "technique": "Frigideira",
-    "minutes": 25,
+    "minutes": 35,
     "servings": 4,
     "ingredients": [
       {
@@ -36,24 +36,63 @@
         "qty": 1,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "manteiga",
+        "qty": 25,
+        "unit": "g",
+        "category": "Laticínios"
+      },
+      {
+        "name": "alcaparras",
+        "qty": 20,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 80,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 4,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Seca o salmão. Tempera com parte do azeite e sal. Aquece uma frigideira em lume médio-alto. Cozinha com a pele para baixo 4–6 min e vira por 2–4 min, ajustando à espessura.",
-      "Finaliza com sumo de limão a gosto.",
-      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Pica a cebola, o alho e a salsa; escorre e passa as alcaparras por água. Raspa a casca do limão sem atingir a parte branca e espreme o sumo. Seca os lombos de salmão e tempera com metade do sal e a pimenta.",
+      "Num tacho, amolece a cebola com metade do azeite durante 4 min. Junta o arroz e mexe 1 min. Adiciona água quente na proporção indicada na embalagem e o restante sal. Coze em lume brando pelo tempo indicado, tapa e deixa repousar 5 min.",
+      "Enquanto o arroz coze, aquece uma frigideira com o restante azeite. Coloca o salmão com a pele para baixo e pressiona suavemente 20 segundos para a pele não enrolar. Cozinha em lume médio 4–6 min, até a pele ganhar cor.",
+      "Vira o peixe e cozinha mais 2–4 min, ajustando à espessura. Confirma 63 °C no centro; se precisar de mais tempo, baixa o lume para não queimar a pele. Retira para um prato morno.",
+      "Na mesma frigideira, em lume baixo, derrete a manteiga e junta o alho durante 30 segundos, sem o deixar escurecer. Adiciona as alcaparras, duas colheres de água e metade do sumo de limão. Mexe 1 min, soltando os sucos do fundo.",
+      "Desliga o lume e junta metade da salsa e um pouco da raspa de limão. Prova antes de acrescentar mais sumo: o molho deve ser fresco e untuoso, sem dominar o peixe.",
+      "Solta o arroz com um garfo e envolve a restante salsa. Serve o salmão sobre o arroz, com o molho por cima da carne e mantendo a pele virada para cima para conservar alguma crocância."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-1",
-    "title": "Dourada no forno com batata fina",
+    "title": "Dourada assada com batata, pimento e ervas",
     "type": "peixe",
     "technique": "Forno",
-    "minutes": 40,
+    "minutes": 55,
     "servings": 4,
     "ingredients": [
       {
@@ -79,23 +118,76 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimento vermelho",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimentão-doce",
+        "qty": 3,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "orégãos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Aquece o forno a 190 °C. Corta a batata em rodelas finas e leva ao forno com azeite e um pouco de água durante 15 min. Junta a dourada limpa e cozinha mais 20–25 min.",
-      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Aquece o forno a 200 °C. Corta a batata em rodelas finas, a cebola em meias-luas e o pimento em tiras. Mistura metade do azeite com metade do alho picado, pimentão-doce, orégãos e metade do sal.",
+      "Espalha os legumes num tabuleiro largo, envolve no tempero e junta 100 ml de água quente pelo canto. Leva ao forno 20 min, mexendo a meio. As batatas devem começar a amolecer antes de receberem o peixe.",
+      "Usa douradas já limpas e sem vísceras, de cerca de 500–600 g cada. Seca bem e faz dois cortes pouco profundos de cada lado. Tempera com o restante sal, pimenta, o restante alho e azeite.",
+      "Coloca rodelas finas de meio limão e talos de salsa dentro da barriga. Reserva as folhas de salsa picadas e o restante limão para o final.",
+      "Baixa o forno para 190 °C. Acomoda o peixe sobre os legumes e rega com um pouco do líquido do tabuleiro. Assa cerca de 20–25 min, conforme o tamanho.",
+      "Confirma 63 °C na parte mais espessa junto à espinha, sem lhe tocar. Se o peixe estiver pronto antes das batatas, retira-o e termina os legumes mais uns minutos.",
+      "Retira o peixe, esmaga ligeiramente dois ou três pedaços de batata no líquido do tabuleiro e mexe: isso dá corpo ao molho sem farinha. Junta a salsa picada e umas gotas do limão reservado.",
+      "Serve o peixe separado da espinha, verificando cuidadosamente as espinhas mais pequenas ao preparar os pratos das crianças. Distribui os legumes e o molho do assado."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-2",
-    "title": "Robalo em papelote com curgete",
+    "title": "Robalo em papelote com curgete, tomate e azeitonas",
     "type": "peixe",
     "technique": "Papelote",
-    "minutes": 30,
+    "minutes": 35,
     "servings": 4,
     "ingredients": [
       {
@@ -121,23 +213,69 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "tomate-cereja",
+        "qty": 200,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeitonas sem caroço",
+        "qty": 40,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "orégãos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 4,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Aquece o forno a 190 °C. Divide os filetes e a curgete fina por quatro folhas de papel vegetal. Tempera e fecha os papelotes. Cozinha 15–20 min; abre com cuidado para evitar o vapor.",
-      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Aquece o forno a 190 °C. Usa filetes de robalo já sem espinhas. Seca-os, passa os dedos pela carne para detetar espinhas e tempera com sal, pimenta e raspa de meio limão.",
+      "Corta a curgete em meias-luas muito finas, o tomate-cereja ao meio e as azeitonas em rodelas. Mistura com alho picado, azeite e orégãos.",
+      "Prepara quatro folhas grandes de papel vegetal. Distribui os legumes pelo centro e assenta os filetes por cima. Junta uma colher de água e uma rodela fina de limão em cada porção.",
+      "Fecha cada papelote dobrando bem as margens, deixando espaço interior para o vapor circular. Pousa-os num tabuleiro, com a união virada para cima.",
+      "Coze no forno 15–20 min, conforme a espessura dos filetes. Abre um papelote com cuidado, afastando o vapor do rosto, e verifica 63 °C no centro do peixe.",
+      "Se os legumes ainda estiverem demasiado firmes, retira o peixe e volta a fechá-los por mais alguns minutos. Não prolongues a cozedura do robalo apenas para terminar os legumes.",
+      "Junta salsa picada e umas gotas de limão a gosto só no final. Serve com todo o suco do papelote: o tomate, as azeitonas e o azeite formam o molho."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-3",
-    "title": "Pescada dourada com cuscuz",
+    "title": "Pescada de especiarias suaves com cuscuz e molho de iogurte",
     "type": "peixe",
     "technique": "Frigideira",
-    "minutes": 25,
+    "minutes": 35,
     "servings": 4,
     "ingredients": [
       {
@@ -163,23 +301,75 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "iogurte natural",
+        "qty": 170,
+        "unit": "g",
+        "category": "Laticínios"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cominhos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimentão-doce",
+        "qty": 3,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cenoura",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 4,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Hidrata o cuscuz com igual volume de água a ferver, tapa 5 min e solta com um garfo. Seca os lombos e salteia no azeite 4–6 min de cada lado, conforme a espessura.",
-      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Seca os lombos de pescada descongelados. Mistura metade do azeite, um dente de alho picado, cominhos, pimentão-doce, metade do sal e pimenta. Espalha no peixe e deixa repousar enquanto preparas o acompanhamento.",
+      "Rala a cenoura. Coloca o cuscuz numa taça com a cenoura, o restante sal e o resto do azeite. Junta água a ferver na quantidade indicada na embalagem, tapa 5 min e solta com um garfo.",
+      "Mistura o iogurte com o outro dente de alho muito bem picado, metade da salsa e raspa de limão. Junta sumo de limão aos poucos até obter um molho fresco, sem ficar demasiado ácido. Reserva no frigorífico.",
+      "Aquece uma frigideira antiaderente em lume médio. Coloca a pescada e cozinha cerca de 4–6 min por lado, conforme a espessura, sem a mexer constantemente para não se desfazer.",
+      "Confirma 63 °C no centro dos lombos. Se a superfície ganhar cor demasiado depressa, baixa o lume e junta uma colher de água para terminar suavemente.",
+      "Envolve a restante salsa no cuscuz, desfazendo os grumos com um garfo. Prova e junta umas gotas de limão se necessário.",
+      "Serve o peixe sobre o cuscuz e coloca o molho de iogurte ao lado, sem o ferver na frigideira. A pescada deve lascar com facilidade e conservar humidade no centro."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-4",
-    "title": "Bacalhau na air fryer com grão",
+    "title": "Bacalhau na air fryer com grão salteado, pimento e salsa",
     "type": "peixe",
     "technique": "Air fryer",
-    "minutes": 25,
+    "minutes": 35,
     "servings": 4,
     "ingredients": [
       {
@@ -205,23 +395,63 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimento vermelho",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimentão-doce",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Seca o bacalhau já demolhado e descongelado. Pincela com azeite e alho. Cozinha na air fryer a 180 °C por 10–15 min sem sobrepor. Aquece o grão num tacho com um pouco de água e azeite.",
-      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Usa bacalhau já demolhado e descongelado. Escorre e seca muito bem os lombos. Não acrescentes sal nesta fase: o teor residual depende da demolha. Corta a cebola em meias-luas e o pimento em tiras finas.",
+      "Mistura metade do azeite com um dente de alho picado, pimenta e raspa de meio limão. Pincela o bacalhau e deixa repousar enquanto aqueces a air fryer a 180 °C.",
+      "Coloca os lombos no cesto sem sobrepor. Cozinha cerca de 10–15 min, verificando a partir dos 10 min. Confirma 63 °C no centro e retira assim que estiverem prontos.",
+      "Em paralelo, amolece a cebola e o pimento numa frigideira com o restante azeite durante 8–10 min. Junta o outro dente de alho e o pimentão-doce e mexe 30 segundos, sem queimar.",
+      "Adiciona o grão escorrido e quatro colheres de água. Aquece 4–5 min, mexendo delicadamente. Esmaga uma pequena colher de grão e envolve no líquido para dar corpo ao molho.",
+      "Desliga e junta a salsa picada e sumo de limão a gosto. Prova o grão com uma pequena lasca de bacalhau antes de decidir se precisa de sal.",
+      "Serve os lombos sobre o grão e os legumes. Desfaz em lascas à mesa ou antes de servir às crianças, verificando todas as espinhas."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-5",
-    "title": "Carapau grelhado com batata",
+    "title": "Carapau grelhado com batata e molho de escabeche suave",
     "type": "peixe",
     "technique": "Grelhado",
-    "minutes": 35,
+    "minutes": 45,
     "servings": 4,
     "ingredients": [
       {
@@ -247,23 +477,75 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cenoura",
+        "qty": 100,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "vinagre de vinho",
+        "qty": 20,
+        "unit": "ml",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "louro",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimentão-doce",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Coze a batata em água cerca de 20 min, até ficar tenra. Aquece e unta a grelha. Seca o carapau limpo e grelha 4–6 min de cada lado, ajustando ao tamanho.",
-      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Corta a batata em pedaços de tamanho semelhante e leva a cozer em água com metade do sal durante cerca de 18–22 min. Escorre quando estiver tenra e mantém tapada.",
+      "Corta a cebola em meias-luas e a cenoura em tiras muito finas. Amolece-as num pequeno tacho com dois terços do azeite e o louro durante 8–10 min, em lume médio-baixo.",
+      "Junta o alho laminado e o pimentão-doce e mexe 30 segundos. Acrescenta o vinagre e quatro colheres de água; deixa fervilhar 2 min para suavizar a acidez. Desliga e reserva.",
+      "Seca os carapaus já limpos, tempera com o restante sal e pimenta e pincela com o azeite reservado. Aquece bem a grelha ou chapa.",
+      "Grelha o peixe cerca de 4–6 min de cada lado, ajustando ao tamanho. Só vires quando a pele se soltar com facilidade. Confirma 63 °C na parte mais espessa, sem tocar na espinha.",
+      "Envolve a batata quente em parte do molho de escabeche. Prova o molho e, se estiver demasiado ácido para a família, suaviza com uma colher de água quente.",
+      "Retira o louro e junta salsa picada. Serve o peixe com a restante cebola, cenoura e molho por cima. Limpa cuidadosamente as espinhas dos carapaus antes de servir às crianças."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-6",
-    "title": "Salmão em papelote com brócolos",
+    "title": "Salmão em papelote com gengibre, mostarda e brócolos",
     "type": "peixe",
     "technique": "Papelote",
-    "minutes": 25,
+    "minutes": 30,
     "servings": 4,
     "ingredients": [
       {
@@ -289,23 +571,69 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "gengibre",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "mostarda suave",
+        "qty": 15,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "mel",
+        "qty": 12,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "molho de soja",
+        "qty": 15,
+        "unit": "ml",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sementes de sésamo",
+        "qty": 8,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Aquece o forno a 190 °C. Corta os brócolos pequenos. Fecha o peixe e os brócolos em quatro papelotes com azeite e uma colher de água por porção. Cozinha 15–20 min.",
-      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Aquece o forno a 190 °C. Corta os brócolos em floretes pequenos e uniformes. Descasca e rala o gengibre e pica o alho.",
+      "Mistura a mostarda, mel, molho de soja, azeite, gengibre e alho com duas colheres de sumo de limão e pimenta. Não juntes sal antes de provar: o molho de soja já é salgado.",
+      "Divide os brócolos por quatro folhas de papel vegetal. Coloca o salmão por cima e distribui a mistura de temperos. Acrescenta uma colher de água em cada papelote.",
+      "Fecha bem os papelotes, deixando espaço para o vapor, e leva ao forno 15–20 min, conforme a espessura do peixe.",
+      "Abre um papelote com cuidado e confirma 63 °C no centro do salmão. Os brócolos devem estar tenros mas ainda verdes; se precisarem de mais tempo, retira primeiro o peixe.",
+      "Enquanto o peixe cozinha, tosta o sésamo numa frigideira seca durante 1–2 min, mexendo até começar a libertar aroma. Retira imediatamente para não queimar.",
+      "Serve com os sucos do papelote, uma pequena raspa de limão e o sésamo tostado. O molho deve equilibrar a mostarda com uma doçura discreta."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-7",
-    "title": "Pescada no forno com tomate",
+    "title": "Pescada no forno com molho de tomate, pimento e azeitonas",
     "type": "peixe",
     "technique": "Forno",
-    "minutes": 35,
+    "minutes": 40,
     "servings": 4,
     "ingredients": [
       {
@@ -331,23 +659,75 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimento vermelho",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "azeitonas sem caroço",
+        "qty": 40,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "orégãos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "louro",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 4,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Aquece o forno a 190 °C. Corta o tomate e espalha num tabuleiro com alho e azeite. Assa 10 min. Junta a pescada e cozinha mais 15–20 min.",
-      "Confirma 63 °C no centro com termómetro; os tempos são indicativos. Retira espinhas antes de servir. Para arroz, massa ou cuscuz, segue a quantidade de água e o tempo da embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Aquece o forno a 190 °C. Pica a cebola e o alho, corta o pimento em tiras finas e o tomate em cubos, conservando os sucos.",
+      "Numa frigideira que possa ir ao forno, amolece a cebola e o pimento no azeite durante 7–8 min. Junta o alho e o louro e mexe mais 30 segundos.",
+      "Adiciona o tomate, orégãos, metade do sal e pimenta. Deixa apurar em lume médio 8–10 min, mexendo, até o tomate perder o aspeto cru e o molho começar a engrossar.",
+      "Seca os lombos de pescada descongelados e tempera com o restante sal. Abre espaço no molho e acomoda o peixe sem o submergir completamente.",
+      "Junta as azeitonas em rodelas e leva ao forno cerca de 12–18 min, conforme a espessura. Confirma 63 °C no centro dos lombos.",
+      "Se o molho estiver demasiado líquido quando o peixe estiver pronto, retira os lombos com cuidado e reduz o molho no fogão durante mais 2–3 min.",
+      "Retira o louro, junta salsa picada e volta a acomodar o peixe. Serve com o molho por cima, verificando as espinhas ao distribuir as porções."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-8",
-    "title": "Frango salteado com arroz",
+    "title": "Bifinhos de frango com natas, cogumelos e arroz",
     "type": "carne",
     "technique": "Frigideira",
-    "minutes": 30,
+    "minutes": 40,
     "servings": 4,
     "ingredients": [
       {
@@ -373,22 +753,69 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cogumelos",
+        "qty": 250,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "natas",
+        "qty": 200,
+        "unit": "ml",
+        "category": "Laticínios"
+      },
+      {
+        "name": "mostarda suave",
+        "qty": 15,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "cebola",
+        "qty": 100,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Corta o frango em tiras uniformes. Aquece o azeite e salteia 8–12 min, mexendo. Coze o arroz à parte segundo a embalagem. Confirma que o frango atinge 74 °C no centro.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Corta o frango em bifinhos de espessura semelhante, seca e tempera com metade do sal e pimenta. Pica a cebola e o alho; limpa os cogumelos com papel húmido e lamina-os, sem os deixar de molho.",
+      "Começa por cozer o arroz em água com o restante sal, seguindo as proporções e o tempo da embalagem. Ao terminar, deixa repousar tapado 5 min antes de soltar com um garfo.",
+      "Aquece metade do azeite numa frigideira larga e aloura o frango em duas levas, cerca de 2 min por lado. Retira para um prato; vai terminar a cozedura no molho.",
+      "Junta o restante azeite e os cogumelos. Cozinha em lume médio-alto 5–7 min sem mexer constantemente, até perderem a água e ganharem cor. Só então junta a cebola e deixa amolecer mais 3 min.",
+      "Acrescenta o alho por 30 segundos. Junta 100 ml de água quente e raspa os sucos do fundo. Envolve a mostarda e as natas e deixa fervilhar suavemente, sem ferver com força.",
+      "Volta a colocar o frango e os sucos do prato no molho. Cozinha em lume baixo 4–6 min ou até atingir 74 °C no centro dos bifinhos. Se o molho engrossar demasiado, junta água, uma colher de cada vez.",
+      "Desliga, junta salsa picada e prova antes de ajustar o tempero. Serve com o arroz e o molho por cima. Os cogumelos devem estar alourados e o molho deve cobrir a colher, sem ficar pastoso."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-9",
-    "title": "Peru com curgete e cuscuz",
+    "title": "Peru com curgete, cuscuz de limão e especiarias suaves",
     "type": "carne",
     "technique": "Frigideira",
-    "minutes": 25,
+    "minutes": 35,
     "servings": 4,
     "ingredients": [
       {
@@ -420,23 +847,69 @@
         "qty": 400,
         "unit": "g",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cominhos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimentão-doce",
+        "qty": 3,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "iogurte natural",
+        "qty": 125,
+        "unit": "g",
+        "category": "Laticínios"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Corta o peru em tiras. Salteia no azeite durante 8–12 min até atingir 74 °C no centro. Hidrata o cuscuz com igual volume de água a ferver, tapa 5 min e solta com um garfo.",
-      "Salteia a curgete em cubos num pouco do azeite durante 7–10 min e serve ao lado.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Corta o peru em tiras e tempera com metade do sal, pimenta, cominhos, pimentão-doce, alho picado e metade do azeite. Deixa tomar gosto enquanto preparas a curgete.",
+      "Corta a curgete em meias-luas de cerca de meio centímetro. Raspa a casca do limão e pica a salsa. Mistura o iogurte com uma colher de sumo de limão e metade da salsa; reserva fresco.",
+      "Coloca o cuscuz numa taça com o restante sal e a raspa de meio limão. Junta água a ferver na proporção indicada na embalagem, tapa 5 min e solta com um garfo.",
+      "Aquece uma frigideira larga com o restante azeite. Salteia a curgete em lume médio-alto 4–5 min, até ganhar cor mas manter alguma firmeza. Retira para um prato.",
+      "Na mesma frigideira, cozinha o peru em duas levas durante cerca de 6–8 min, mexendo para alourar por igual. Confirma 74 °C no centro dos pedaços mais grossos.",
+      "Junta duas ou três colheres de água à frigideira e solta os sucos do fundo. Volta a envolver a curgete por 1 min, evitando que se desfaça.",
+      "Solta o cuscuz, envolve a salsa restante e serve com o peru e a curgete. Coloca o molho de iogurte ao lado, fora do lume."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-10",
-    "title": "Lombo de porco com batata na air fryer",
+    "title": "Medalhões de porco na air fryer com batata e molho de mostarda",
     "type": "carne",
     "technique": "Air fryer",
-    "minutes": 35,
+    "minutes": 45,
     "servings": 4,
     "ingredients": [
       {
@@ -462,22 +935,69 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "mostarda suave",
+        "qty": 20,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "iogurte natural",
+        "qty": 170,
+        "unit": "g",
+        "category": "Laticínios"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimentão-doce",
+        "qty": 3,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "alecrim",
+        "qty": 2,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Corta a batata em cubos pequenos. Cozinha na air fryer a 190 °C durante cerca de 15 min. Junta o porco em medalhões num cesto sem sobreposição; cozinha cerca de 12–16 min, confirmando 63 °C no centro e repouso de 3 min.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Corta a batata em cubos de cerca de 1,5 cm. Envolve com dois terços do azeite, metade do sal, pimentão-doce e alecrim picado. Aquece a air fryer a 190 °C.",
+      "Espalha a batata no cesto sem o encher em excesso. Cozinha cerca de 22–28 min, abanando a meio. Se o cesto for pequeno, faz duas levas e mantém a primeira num prato tapado.",
+      "Corta o lombo em medalhões de cerca de 2 cm. Tempera com alho picado, o restante azeite e sal, pimenta e raspa de meio limão. Não confundas este corte com cachaço: a receita pressupõe lombo tenro.",
+      "Mistura o iogurte com a mostarda e uma colher de sumo de limão. Reserva no frigorífico; este molho serve-se fresco e não vai à air fryer.",
+      "Quando a batata estiver pronta, retira-a e coloca os medalhões no cesto sem sobrepor. Cozinha a 180 °C durante cerca de 10–14 min, virando a meio e verificando a temperatura a partir dos 10 min.",
+      "Confirma 63 °C no centro da carne e deixa repousar 3 min antes de cortar. Evita prolongar apenas para ganhar cor: o lombo seca facilmente.",
+      "Se necessário, volta a aquecer as batatas na air fryer durante 2 min enquanto a carne repousa. Serve os medalhões com a batata aromática e o molho de mostarda ao lado."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-11",
-    "title": "Frango de forno com tomate",
+    "title": "Frango gratinado com tomate, mozzarella e orégãos",
     "type": "carne",
     "technique": "Forno",
-    "minutes": 40,
+    "minutes": 45,
     "servings": 4,
     "ingredients": [
       {
@@ -503,22 +1023,63 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 100,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "mozzarella",
+        "qty": 125,
+        "unit": "g",
+        "category": "Laticínios"
+      },
+      {
+        "name": "orégãos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "manjericão",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Aquece o forno a 190 °C. Dispõe o frango sobre o tomate cortado. Junta azeite e alho. Cozinha 25–35 min, conforme espessura, e confirma 74 °C no centro.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Aquece o forno a 200 °C. Abre os peitos de frango em bifes de espessura semelhante e tempera com metade do sal e pimenta. Pica a cebola, o alho e o tomate; escorre e corta a mozzarella.",
+      "Numa frigideira, aquece metade do azeite e aloura o frango cerca de 2 min por lado. Retira para um tabuleiro; ainda vai terminar a cozedura no forno.",
+      "Junta o restante azeite à frigideira e amolece a cebola 5 min. Acrescenta o alho, mexe 30 segundos e junta o tomate com os seus sucos.",
+      "Tempera com o restante sal e os orégãos. Apura 8–10 min, mexendo, até o molho perder o excesso de água. Se o tomate estiver a agarrar antes de amolecer, junta duas colheres de água.",
+      "Distribui o molho sobre o frango e leva ao forno 10–15 min, conforme a espessura. Confirma 74 °C no centro da carne.",
+      "Quando o frango estiver quase pronto, coloca a mozzarella por cima e gratina 3–5 min até derreter e começar a dourar. Vigia para o queijo não queimar.",
+      "Retira e deixa repousar 3 min. Junta o manjericão rasgado à mão só no final, para preservar o aroma. Serve com o molho do tabuleiro."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-12",
-    "title": "Almôndegas de vaca com massa",
+    "title": "Almôndegas de vaca em molho de tomate e ervas com massa",
     "type": "carne",
     "technique": "Tacho",
-    "minutes": 35,
+    "minutes": 45,
     "servings": 4,
     "ingredients": [
       {
@@ -544,22 +1105,82 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "tomate triturado",
+        "qty": 500,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pão ralado",
+        "qty": 30,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "leite",
+        "qty": 50,
+        "unit": "ml",
+        "category": "Laticínios"
+      },
+      {
+        "name": "orégãos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "queijo parmesão",
+        "qty": 25,
+        "unit": "g",
+        "category": "Laticínios"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Forma pequenas almôndegas com a carne e sal. Aloura no azeite e junta 300 ml de água. Tapa e cozinha 15–20 min, até atingir 71 °C no centro. Coze a massa segundo a embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Mistura o pão ralado com o leite e deixa hidratar 2 min. Junta à carne picada metade do alho, metade da salsa, metade do sal e a pimenta. Envolve apenas até ligar, sem amassar em excesso.",
+      "Forma cerca de 20 almôndegas pequenas e semelhantes. Aquece metade do azeite numa frigideira larga e aloura em levas durante 5–6 min, virando com cuidado. Retira para um prato.",
+      "Pica a cebola e amolece-a na mesma frigideira com o restante azeite durante 5 min. Junta o alho restante por 30 segundos.",
+      "Adiciona o tomate triturado, orégãos, restante sal e 100 ml de água. Raspa os sucos do fundo e deixa fervilhar 5 min.",
+      "Volta a colocar as almôndegas no molho, tapa parcialmente e cozinha em lume baixo 12–15 min, virando a meio. Confirma 71 °C no centro de uma das maiores.",
+      "Enquanto o molho apura, coze a massa até ficar al dente, seguindo a embalagem. Reserva 150 ml da água da massa antes de escorrer.",
+      "Envolve a massa no molho. Junta a água reservada aos poucos, apenas a necessária para o molho aderir sem ficar seco. Não é obrigatório usar toda.",
+      "Desliga e junta a salsa restante e o parmesão ralado. Serve de imediato, com almôndegas macias e molho distribuído pela massa."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-13",
-    "title": "Peru grelhado com batata",
+    "title": "Peru grelhado com molho de limão e ervas, batata salteada",
     "type": "carne",
     "technique": "Grelhado",
-    "minutes": 30,
+    "minutes": 40,
     "servings": 4,
     "ingredients": [
       {
@@ -585,22 +1206,69 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "mostarda suave",
+        "qty": 15,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "orégãos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "manteiga",
+        "qty": 20,
+        "unit": "g",
+        "category": "Laticínios"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Coze a batata cortada em água durante cerca de 20 min. Grelha os bifes de peru numa chapa quente 4–6 min por lado, conforme espessura; confirma 74 °C no centro.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Corta a batata em cubos pequenos e coze em água com metade do sal durante 12–15 min, até ficar quase tenra. Escorre bem e deixa libertar vapor para não salpicar ao saltear.",
+      "Tempera os bifes de peru com alho picado, pimenta, orégãos, o restante sal, metade do azeite e raspa de meio limão. Deixa tomar gosto enquanto a batata coze.",
+      "Mistura a mostarda com duas colheres de sumo de limão e duas colheres de água. Pica a salsa e reserva.",
+      "Aquece o restante azeite numa frigideira e aloura a batata durante 6–8 min, mexendo apenas de vez em quando. Mantém quente.",
+      "Numa chapa ou frigideira quente, grelha o peru cerca de 3–5 min por lado, conforme a espessura. Confirma 74 °C no centro e retira para um prato.",
+      "Baixa o lume da frigideira do peru. Junta a mistura de limão e mostarda, soltando os sucos do fundo durante 30 segundos. Desliga e envolve a manteiga fria em pedaços até o molho ficar brilhante.",
+      "Junta a salsa ao molho e distribui sobre o peru. Serve com a batata alourada e o restante limão à parte, para cada pessoa ajustar a acidez."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-14",
-    "title": "Porco salteado com arroz",
+    "title": "Porco salteado com pimentos, molho agridoce suave e arroz",
     "type": "carne",
     "technique": "Frigideira",
-    "minutes": 30,
+    "minutes": 35,
     "servings": 4,
     "ingredients": [
       {
@@ -626,22 +1294,82 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimento vermelho",
+        "qty": 200,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "molho de soja",
+        "qty": 20,
+        "unit": "ml",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "mel",
+        "qty": 15,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "vinagre de arroz",
+        "qty": 15,
+        "unit": "ml",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "gengibre",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "amido de milho",
+        "qty": 8,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Corta o porco em tiras. Salteia no azeite com alho 8–12 min. Confirma 63 °C no centro e deixa repousar 3 min. Coze o arroz segundo a embalagem.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Corta o lombo de porco em tiras finas e uniformes; tempera com pimenta. Pica o alho e o gengibre, corta a cebola em gomos finos e o pimento em tiras.",
+      "Coze o arroz com o sal e a quantidade de água indicada na embalagem. No fim, deixa repousar tapado 5 min e solta com um garfo.",
+      "Numa taça, mistura o molho de soja, mel, vinagre e 120 ml de água. Dissolve o amido de milho noutra taça com duas colheres de água fria para não formar grumos.",
+      "Aquece metade do azeite numa frigideira larga e salteia o porco em duas levas, cerca de 3–4 min por leva. Retira para um prato.",
+      "Junta o restante azeite, a cebola e o pimento e salteia 4–5 min, mantendo os legumes ligeiramente firmes. Junta o alho e o gengibre por 30 segundos.",
+      "Volta a colocar a carne e junta o molho da taça. Deixa fervilhar suavemente, confirma 63 °C no centro da carne e envolve o amido dissolvido.",
+      "Mexe 30–60 segundos até o molho ganhar brilho e aderir aos ingredientes. Se engrossar demasiado, solta com um pouco de água. Prova antes de acrescentar sal, porque a soja já o contém.",
+      "Desliga e deixa a carne repousar 3 min no molho. Serve sobre o arroz, distribuindo o pimento e a cebola por todos os pratos."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-15",
-    "title": "Frango na air fryer com brócolos",
+    "title": "Frango na air fryer com crosta de especiarias, brócolos e molho de iogurte",
     "type": "carne",
     "technique": "Air fryer",
-    "minutes": 30,
+    "minutes": 35,
     "servings": 4,
     "ingredients": [
       {
@@ -667,15 +1395,68 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "iogurte natural",
+        "qty": 170,
+        "unit": "g",
+        "category": "Laticínios"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimentão-doce",
+        "qty": 3,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "cominhos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "orégãos",
+        "qty": 2,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e prepara os ingredientes. Mantém os alimentos crus separados dos alimentos prontos a comer.",
-      "Corta o frango em pedaços uniformes e os brócolos em floretes pequenos. Tempera com azeite e alho. Cozinha a 180 °C durante 15–20 min, mexendo a meio. Confirma 74 °C no frango.",
-      "Prova e ajusta sal e pimenta, se usares. Serve de imediato. Guarda sobras no frigorífico até duas horas após a confeção."
+      "Corta o frango em pedaços uniformes de cerca de 3 cm. Mistura metade do iogurte com um dente de alho picado, pimentão-doce, cominhos, orégãos, metade do sal e pimenta. Envolve o frango e deixa tomar gosto enquanto preparas os brócolos.",
+      "Corta os brócolos em floretes pequenos. Envolve com o azeite e o restante sal. Aquece a air fryer a 180 °C.",
+      "Prepara o molho frio com o iogurte restante, o outro dente de alho muito bem picado, salsa e uma colher de sumo de limão. Reserva no frigorífico.",
+      "Coloca o frango no cesto em camada única, retirando apenas o excesso de marinada. Cozinha cerca de 12–16 min, virando a meio, e confirma 74 °C no centro dos maiores pedaços.",
+      "Retira o frango para um prato e tapa ligeiramente. Cozinha os brócolos no cesto a 180 °C durante cerca de 6–9 min, abanando a meio. Vigia para as pontas não queimarem.",
+      "Se os brócolos ainda estiverem muito rijos quando ganharem cor, termina-os num tacho tapado com duas colheres de água durante 2–3 min.",
+      "Serve o frango com a crosta aromática, os brócolos e o molho frio ao lado. Acrescenta raspa de limão no final para dar frescura."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "base-16",
@@ -1028,10 +1809,10 @@
   },
   {
     "id": "pantry-cut-0",
-    "title": "Frango em pedaços no tacho com batata",
+    "title": "Frango estufado com limão, pimentão e batata",
     "type": "carne",
     "technique": "Tacho",
-    "minutes": 45,
+    "minutes": 55,
     "servings": 4,
     "ingredients": [
       {
@@ -1057,21 +1838,76 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "louro",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimentão-doce",
+        "qty": 3,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "cominhos",
+        "qty": 1,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e separa os utensílios de carne crua dos alimentos prontos a servir.",
-      "Doura os pedaços de frango no azeite, junta alho, batata em cubos e 300 ml de água. Tapa e cozinha em lume brando 30–35 min. Confirma 74 °C na parte mais espessa, sem encostar o termómetro ao osso."
+      "Corta o frango em pedaços pequenos e uniformes, mantendo as peças com osso separadas das mais pequenas. Seca com papel de cozinha. Envolve com o sal, pimenta, pimentão-doce, cominhos, alho picado e sumo de meio limão. Deixa tomar gosto enquanto preparas os legumes.",
+      "Pica a cebola. Descasca as batatas e corta em cubos de cerca de 2 cm, para cozerem de forma uniforme. Reserva a salsa picada e o restante limão para finalizar.",
+      "Aquece um tacho largo com o azeite em lume médio-alto. Aloura o frango em duas levas, cerca de 3–4 min de cada lado. Não enchas o fundo: o objetivo é ganhar cor, não cozer a carne no próprio líquido. Retira para um prato.",
+      "Baixa para lume médio. Junta a cebola e o louro ao mesmo tacho e cozinha 5–6 min, mexendo, até a cebola amolecer e começar a dourar. Se o alho da marinada começar a escurecer, junta uma colher de água.",
+      "Adiciona 300 ml de água quente e raspa o fundo com uma colher de madeira para dissolver os sucos alourados. Volta a colocar o frango e os sucos do prato, tapa e deixa fervilhar suavemente 10 min.",
+      "Junta a batata, envolve no molho e tapa novamente. Cozinha mais 15–20 min, mexendo o tacho de vez em quando. Acrescenta água quente em pequenas quantidades apenas se o fundo começar a secar.",
+      "Verifica se a batata está tenra e se o frango atinge 74 °C na parte mais espessa, sem tocar no osso com o termómetro. Retira a tampa e apura 3–5 min para o molho cobrir ligeiramente a colher; se houver pouco molho, junta água em vez de deixar pegar.",
+      "Desliga, retira o louro, junta a salsa e ajusta a acidez com o restante limão a gosto. Deixa repousar tapado 3 min antes de servir. O resultado deve ser suculento, com batata macia e molho aromático, não uma sopa."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "pantry-cut-1",
-    "title": "Costeletas de porco com arroz de alho",
+    "title": "Costeletas com molho de mostarda e cebola, arroz de alho",
     "type": "carne",
     "technique": "Frigideira",
-    "minutes": 30,
+    "minutes": 40,
     "servings": 4,
     "ingredients": [
       {
@@ -1097,21 +1933,69 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "mostarda suave",
+        "qty": 20,
+        "unit": "g",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "natas",
+        "qty": 150,
+        "unit": "ml",
+        "category": "Laticínios"
+      },
+      {
+        "name": "tomilho",
+        "qty": 2,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "limão",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e separa os utensílios de carne crua dos alimentos prontos a servir.",
-      "Coze o arroz conforme a embalagem. Seca e tempera as costeletas. Cozinha numa frigideira com azeite, em lume médio, cerca de 5–7 min de cada lado conforme a espessura. Confirma 63 °C no centro sem tocar no osso e deixa repousar 3 min."
+      "Seca as costeletas e tempera com metade do sal, pimenta e tomilho. Corta a cebola em meias-luas e pica o alho.",
+      "Num tacho pequeno, aquece um terço do azeite com metade do alho durante 30 segundos. Junta o arroz e envolve 1 min; acrescenta a água indicada na embalagem e o restante sal. Coze e deixa repousar tapado 5 min.",
+      "Aquece o restante azeite numa frigideira e aloura as costeletas em lume médio, cerca de 4–6 min por lado conforme a espessura. Confirma 63 °C no centro, sem tocar no osso, retira e deixa repousar pelo menos 3 min.",
+      "Na mesma frigideira, cozinha a cebola em lume médio-baixo 7–8 min, mexendo até ficar macia e dourada. Junta o alho restante por 30 segundos.",
+      "Adiciona 100 ml de água quente e raspa os sucos do fundo. Envolve a mostarda e as natas e deixa fervilhar suavemente 2–3 min.",
+      "Junta os sucos libertados pelas costeletas no prato. Prova e equilibra com algumas gotas de limão. Se o molho estiver espesso, acrescenta uma colher de água em vez de o ferver mais.",
+      "Volta a colocar a carne apenas para a envolver no molho, sem prolongar a cozedura. Serve com o arroz solto e a cebola distribuída por cima."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   },
   {
     "id": "pantry-cut-2",
-    "title": "Cachaço de porco salteado com arroz",
+    "title": "Cachaço de porco com pimentão, louro e molho de alho",
     "type": "carne",
     "technique": "Frigideira",
-    "minutes": 35,
+    "minutes": 45,
     "servings": 4,
     "ingredients": [
       {
@@ -1137,13 +2021,62 @@
         "qty": 2,
         "unit": "un",
         "category": "Hortofrutícolas"
+      },
+      {
+        "name": "cebola",
+        "qty": 150,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "pimentão-doce",
+        "qty": 3,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "louro",
+        "qty": 1,
+        "unit": "un",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "vinagre de vinho",
+        "qty": 15,
+        "unit": "ml",
+        "category": "Molhos e condimentos"
+      },
+      {
+        "name": "salsa",
+        "qty": 10,
+        "unit": "g",
+        "category": "Hortofrutícolas"
+      },
+      {
+        "name": "sal",
+        "qty": 5,
+        "unit": "g",
+        "category": "Temperos"
+      },
+      {
+        "name": "pimenta preta",
+        "qty": 0.5,
+        "unit": "g",
+        "category": "Temperos"
       }
     ],
     "steps": [
-      "Lava as mãos e separa os utensílios de carne crua dos alimentos prontos a servir.",
-      "Corta o cachaço em tiras finas, retirando cartilagens. Salteia com azeite e alho em lume médio-alto, sem encher a frigideira. Cozinha até atingir 63 °C no centro e deixa repousar 3 min. Coze o arroz segundo a embalagem."
+      "Retira cartilagens visíveis e corta o cachaço em tiras finas, atravessando as fibras da carne para facilitar a mastigação. Não uses cubos grandes nesta receita rápida.",
+      "Mistura o alho picado, pimentão-doce, metade do azeite, vinagre, sal e pimenta. Envolve a carne e deixa repousar enquanto preparas a cebola e o arroz.",
+      "Coze o arroz segundo as proporções e o tempo da embalagem. Deixa repousar tapado 5 min no final.",
+      "Corta a cebola em meias-luas. Aquece o restante azeite numa frigideira larga e aloura a carne em duas ou três levas, sem amontoar. Retira para um prato.",
+      "Na mesma frigideira, amolece a cebola com o louro durante 6–8 min. Junta 120 ml de água quente e raspa os sucos do fundo para formar a base do molho.",
+      "Volta a colocar a carne e os sucos do prato. Tapa e cozinha em lume baixo cerca de 8–12 min. Confirma pelo menos 63 °C no centro das tiras; se a carne ainda estiver rija, prolonga suavemente com mais um pouco de água.",
+      "Retira a tampa e reduz o molho 2–3 min, até aderir à carne. Desliga e deixa repousar 3 min. Retira o louro e junta a salsa picada.",
+      "Serve sobre o arroz com o molho de cebola e alho. O objetivo é carne tenra e molho concentrado; se secar antes de amaciar, junta água quente em pequenas quantidades."
     ],
     "source": "",
-    "image": ""
+    "image": "",
+    "catalogueRevision": 6
   }
 ]

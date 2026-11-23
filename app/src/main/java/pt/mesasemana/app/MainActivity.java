@@ -36,9 +36,27 @@ public class MainActivity extends Activity {
    catalogue=new JSONArray(read(getAssets().open("recipes.json"),2000000));
    String saved=getPreferences(0).getString("state",null);
    state=saved==null?new JSONObject("{\"schema\":1,\"pantry\":[],\"plan\":[],\"favorites\":[],\"preferences\":{\"people\":4,\"minutes\":45,\"fish\":3,\"meat\":3}}"):new JSONObject(saved);
-   validate(state); show();
+   validate(state);if(prefs().optInt("catalogueRevision",0)<6)refreshCatalogueRecipes(); show();
   }catch(Exception e){new AlertDialog.Builder(this).setMessage("Não foi possível abrir os dados. Os dados existentes foram preservados.").setPositiveButton("Fechar",(d,w)->finish()).show();}
  }
+
+ void refreshCatalogueRecipes()throws Exception{
+  Map<String,JSONObject> latest=new HashMap<>();
+  for(int i=0;i<catalogue.length();i++){JSONObject r=catalogue.getJSONObject(i);if(r.optInt("catalogueRevision",0)==6)latest.put(r.getString("id"),r);}
+  JSONObject updated=new JSONObject(state.toString());
+  for(String group:new String[]{"plan","favorites"}){
+   JSONArray items=updated.getJSONArray(group);
+   for(int i=0;i<items.length();i++){
+    JSONObject old=items.getJSONObject(i),fresh=latest.get(old.optString("id"));
+    if(fresh==null||("plan".equals(group)&&old.optBoolean("cooked")))continue;
+    JSONObject replacement=new JSONObject(fresh.toString());
+    if("plan".equals(group)&&old.has("mainFromPantry"))put(replacement,"mainFromPantry",old.optBoolean("mainFromPantry"));
+    items.put(i,replacement);
+   }
+  }
+  put(updated.getJSONObject("preferences"),"catalogueRevision",6);validate(updated);state=updated;save();
+ }
+
  void save(){if(!getPreferences(0).edit().putString("state",state.toString()).commit())toast("Não foi possível gravar no dispositivo. Exporta antes de fechar.");}
  JSONObject cleanRecipe(JSONObject r){try{JSONObject copy=new JSONObject(r.toString());copy.remove("cooked");return copy;}catch(Exception e){throw new IllegalStateException(e);}}
  String read(InputStream in,int max)throws Exception{
